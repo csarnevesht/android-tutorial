@@ -57,9 +57,9 @@ For now, just try to remember the following pieces, you don't need to understand
 
 **_HINT_**: in Android Studio, use Cmd-Shift-O (or go to "Navigate" -> "File") and type MainActivity.java or activity_main.xml (or any file name) to open a file.
 
-## Clone android-tutorial and open in Android Developer Studio.
+## Clone android-tutorials and open in Android Developer Studio.
 
-At this point, if you haven't done so already, you will need to clone the android-tutorial github repository and open
+At this point, if you haven't done so already, you will need to clone the android-tutorials github repository and open
 the empty app in Android Developer Studio.
 You will need to switch to different branches as we go further along in this tutorial.
 
@@ -367,7 +367,7 @@ a uniform grid, staggered grids, horizontally scrolling collections and more.
 We will be using **MaterialSearchbar** from https://github.com/mancj/MaterialSearchBar
 
 Additionally, we will be adding search functionality to existing RecyclerView code from the RecyclerView lesson in branch **recycleview**
-https://github.com/csarnevesht/android-tutorial/tree/recyclerview
+https://github.com/csarnevesht/android-tutorials/recyclerview
 
 #### Go to res/layout/activity_main.xml, open the "Text" tab, and see the added Toolbar and Material Search bar as follows:
 
@@ -472,7 +472,7 @@ https://github.com/csarnevesht/android-tutorial/tree/recyclerview
 ## Firebase
 
 We will be adding **Firebase** functionality to existing RecyclerView and search code from the search lesson in branch **search**
-https://github.com/csarnevesht/android-tutorial/tree/search
+https://github.com/csarnevesht/android-tutorials/search
 
 #### Add Firebase to your Android project
 
@@ -481,10 +481,10 @@ Follow instructions in https://firebase.google.com/docs/android/setup
 #### Upload trophy images to 'Firebase Storage'
 
 1. Open the Firebase **console** on the browser at https://console.firebase.google.com
-2. Click on the **android-tutorial** project
+2. Click on the **android-tutorials** project
 3. Click **Storage** from the left menu
 4. Click on the **Files** tab
-5. Click **Upload file** and upload trophy images from **android-tutorial/images**
+5. Click **Upload file** and upload trophy images from **android-tutorials/images**
 
 #### Define Storage Rules
 
@@ -504,7 +504,7 @@ Follow instructions in https://firebase.google.com/docs/android/setup
 #### Create trophy records in 'Cloud Firestore'
 
 1. Open the Firebase **console** on the browser at https://console.firebase.google.com
-2. Click on the **android-tutorial** project
+2. Click on the **android-tutorials** project
 3. Click **Database** from the left menu
 4. Select **Database** -> **Cloud Firestore**
 5. Click on the **Data** tab
