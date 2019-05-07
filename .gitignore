@@ -1,2 +1,9 @@
 **/.gradle/**
 **/.idea/**
+**/*.iml
+**/app/*.iml
+firebase/app/app.iml
+.gitignore.swp
+ui-elements-runtime/app/app.iml
+recyclerview/app/app.iml
+firebase/app/app.iml

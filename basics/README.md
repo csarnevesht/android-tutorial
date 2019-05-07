@@ -1,7 +1,7 @@
 # Android Tutorial
 
 *******************************************************************************************************************
-# Switch to branch 'basics'
+# Open project 'basics'
 *******************************************************************************************************************
 
 ## Some basics ...
@@ -108,7 +108,7 @@ https://www.tutlane.com/tutorial/android/android-view-and-viewgroup-with-example
 # Android Tutorial
 
 *******************************************************************************************************************
-# Switch to branch 'basics'
+# Open project 'basics'
 *******************************************************************************************************************
 
 ## Some basics ...
@@ -220,6 +220,6 @@ https://www.tutlane.com/tutorial/android/android-view-and-viewgroup-with-example
 for more information see https://developer.android.com/jetpack/androidx
 
 *******************************************************************************************************************
-# Switch to branch 'ui-elements-runtime'
+# Open project 'ui-elements-runtime'
 *******************************************************************************************************************
 

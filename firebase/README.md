@@ -1,7 +1,7 @@
 # Android Tutorial
 
 *******************************************************************************************************************
-# Switch to branch 'basics'
+# Open project 'basics'
 *******************************************************************************************************************
 
 ## Some basics ...
@@ -123,7 +123,7 @@ https://www.tutlane.com/tutorial/android/android-view-and-viewgroup-with-example
 for more information see https://developer.android.com/jetpack/androidx
 
 *******************************************************************************************************************
-# Switch to branch 'ui-elements-runtime'
+# Open project 'ui-elements-runtime'
 *******************************************************************************************************************
 
 ## UI Elements
@@ -170,7 +170,7 @@ public class MainActivity extends AppCompatActivity {
 run the app.
 
 *******************************************************************************************************************
-# Switch to branch 'ui-elements-xml'
+# Open project 'ui-elements-xml'
 *******************************************************************************************************************
 
 ## Declare UI elements in XML
@@ -236,7 +236,7 @@ as much fun as I did!
 https://www.youtube.com/watch?v=4N4bCdyGcUc
 
 *******************************************************************************************************************
-# Switch to branch 'recyclerview'
+# Open project 'recyclerview'
 *******************************************************************************************************************
 
 ## RecyclerView
@@ -359,7 +359,7 @@ By changing the layout manager, recyclerview can be used to implement a standard
 a uniform grid, staggered grids, horizontally scrolling collections and more.
 
 *******************************************************************************************************************
-# Switch to branch 'search'
+# Open project 'search'
 *******************************************************************************************************************
 
 ## Search
@@ -466,7 +466,7 @@ https://github.com/csarnevesht/android-tutorial/tree/recyclerview
 
 
 *******************************************************************************************************************
-# Switch to branch 'firebase'
+# Open project 'firebase'
 *******************************************************************************************************************
 
 ## Firebase
@@ -627,5 +627,5 @@ Note: see https://firebase.google.com/docs/android/setup#available-libraries
 ```
 
 *******************************************************************************************************************
-# Switch to branch 'master'
+# Open project 'master'
 *******************************************************************************************************************
