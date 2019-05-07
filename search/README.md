@@ -355,7 +355,7 @@ a uniform grid, staggered grids, horizontally scrolling collections and more.
 We will be using MaterialSearchbar from https://github.com/mancj/MaterialSearchBar
 
 Additionally, we will be adding search functionality to existing RecyclerView code from the RecyclerView lession in
-https://github.com/csarnevesht/android-tutorial/tree/recyclerview
+https://github.com/csarnevesht/android-tutorials/recyclerview
 
 #### Go to res/layout/activity_main.xml, open the "Text" tab, and see the added Toolbar and Material Search bar as follows:
 
