@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
 
     private MaterialSearchBar searchBar;
 
-    LinearLayoutManager mLayoutManager; //for search
+    LinearLayoutManager mLayoutManager;
     private RecyclerView recyclerView;
     private TrophyAdapter adapter;
     private ArrayList<Trophy> trophyArrayList;
@@ -60,28 +60,6 @@ public class MainActivity extends AppCompatActivity {
 //        // - fill data for recyclerview items
 //        createListData();
 
-        searchBar = findViewById(R.id.searchBar);
-
-        searchBar.addTextChangeListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-            }
-
-            @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                Log.d("LOG_TAG", getClass().getSimpleName() + " text changed " + searchBar.getText());
-                doSearch(searchBar.getText());
-            }
-
-            @Override
-            public void afterTextChanged(Editable editable) {
-                Log.d("LOG_TAG", getClass().getSimpleName() + " after text changed " + searchBar.getText());
-                doSearch(searchBar.getText());
-            }
-
-        });
-
-        searchBar.enableSearch();
     }
 
     //load data into recycler view onStart
