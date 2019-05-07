@@ -47,9 +47,9 @@ For now, just try to remember the following pieces, you don't need to understand
 
 **_HINT_**: in Android Studio, use Cmd-Shift-O (or go to "Navigate" -> "File") and type MainActivity.java or activity_main.xml (or any file name) to open a file.
 
-## Clone android-tutorial and open in Android Developer Studio.
+## Clone android-tutorials and open in Android Developer Studio.
 
-At this point, if you haven't done so already, you will need to clone the android-tutorial github repository and open
+At this point, if you haven't done so already, you will need to clone the android-tutorials github repository and open
 the empty app in Android Developer Studio.
 You will need to switch to different branches as we go further along in this tutorial.
 
@@ -357,7 +357,7 @@ a uniform grid, staggered grids, horizontally scrolling collections and more.
 We will be using **MaterialSearchbar** from https://github.com/mancj/MaterialSearchBar
 
 Additionally, we will be adding search functionality to existing RecyclerView code from the RecyclerView lesson in branch **recycleview**
-https://github.com/csarnevesht/android-tutorial/tree/recyclerview
+https://github.com/csarnevesht/android-tutorials/recyclerview
 
 #### Go to res/layout/activity_main.xml, open the "Text" tab, and see the added Toolbar and Material Search bar as follows:
 

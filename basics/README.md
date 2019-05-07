@@ -45,9 +45,9 @@ For now, just try to remember the following pieces, you don't need to understand
  - Android emulator
  - running the Android app
 
-## Clone android-tutorial and open in Android Developer Studio.
+## Clone android-tutorials and open in Android Developer Studio.
 
-At this point, if you haven't done so already, you will need to clone the android-tutorial github repository and open
+At this point, if you haven't done so already, you will need to clone the android-tutorials github repository and open
 the empty app in Android Developer Studio.
 You will need to switch to different branches as we go further along in this tutorial.
 
@@ -154,9 +154,9 @@ For now, just try to remember the following pieces, you don't need to understand
 
 **_HINT_**: in Android Studio, use Cmd-Shift-O (or go to "Navigate" -> "File") and type MainActivity.java or activity_main.xml (or any file name) to open a file.
 
-## Clone android-tutorial and open in Android Developer Studio.
+## Clone android-tutorials and open in Android Developer Studio.
 
-At this point, if you haven't done so already, you will need to clone the android-tutorial github repository and open
+At this point, if you haven't done so already, you will need to clone the android-tutorials github repository and open
 the empty app in Android Developer Studio.
 You will need to switch to different branches as we go further along in this tutorial.
 
