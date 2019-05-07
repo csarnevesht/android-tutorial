@@ -1,11 +1,5 @@
 # Android Tutorial
 
-*******************************************************************************************************************
-# Open project 'basics'
-*******************************************************************************************************************
-
-## Some basics ...
-
 The content in this repository will be mostly based off of the Android tutorial in the following link:
 https://www.tutlane.com/tutorial/android/android-tutorial.
 
@@ -47,17 +41,9 @@ For now, just try to remember the following pieces, you don't need to understand
 
 **_HINT_**: in Android Studio, use Cmd-Shift-O (or go to "Navigate" -> "File") and type MainActivity.java or activity_main.xml (or any file name) to open a file.
 
-## Clone android-tutorials and open in Android Developer Studio.
+## Clone android-tutorials github repository.
 
-At this point, if you haven't done so already, you will need to clone the android-tutorials github repository and open
-the empty app in Android Developer Studio.
-You will need to switch to different branches as we go further along in this tutorial.
-
-You will need to know how to switch branches.
-
-In Android Developer Studio, click **Git: master** at the very bottom and you will be able to switch branches, see image below as the arrow points to it:
-
-![Alt text](readmeimgs/android-git.png)
+At this point, if you haven't done so already, you will need to clone the android-tutorials github repository.
 
 ## Android mobile app
 
