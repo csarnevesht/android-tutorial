@@ -1,4 +1,4 @@
-# Android Tutorial
+# Android Tutorials
 
 The content in this repository will be mostly based off of the Android tutorial in the following link:
 https://www.tutlane.com/tutorial/android/android-tutorial.
@@ -44,6 +44,14 @@ For now, just try to remember the following pieces, you don't need to understand
 ## Clone android-tutorials github repository.
 
 At this point, if you haven't done so already, you will need to clone the android-tutorials github repository.
+In this repository you will find the following projects, each explaining a specific Android feature:
+
+- ui-elements-runtime
+- ui-elements-xml
+- recyclerview
+- search
+- firebase
+- firebase-search
 
 ## Android mobile app
 
