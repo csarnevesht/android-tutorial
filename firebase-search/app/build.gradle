@@ -1,0 +1,55 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.example.androidtutorial"
+        minSdkVersion 19
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    //Doesn't build and run without this
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.appcompat:appcompat:1.0.2'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'androidx.recyclerview:recyclerview:1.0.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+
+    //Material search bar library
+    implementation 'com.github.mancj:MaterialSearchBar:0.8.2'
+
+    //picasso library to retrieve images
+    implementation 'com.squareup.picasso:picasso:2.71828'
+
+    // Firebase core
+    implementation 'com.google.firebase:firebase-core:16.0.8'
+
+    // Cloud Firestore
+    // see https://firebase.google.com/docs/android/setup#available-libraries
+    implementation 'com.google.firebase:firebase-firestore:18.2.0'
+
+    // FirebaseUI for Cloud Firestore
+    // Used for FirestoreRecyclerAdapter
+    // see https://firebaseopensource.com/projects/firebase/firebaseui-android/firestore/readme.md/
+    implementation 'com.firebaseui:firebase-ui-firestore:4.3.1'
+
+}
+
+apply plugin: 'com.google.gms.google-services'
