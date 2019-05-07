@@ -11,6 +11,27 @@ We will be using MaterialSearchbar from https://github.com/mancj/MaterialSearchB
 Additionally, we will be adding search functionality to existing RecyclerView code from the RecyclerView lession in
 https://github.com/csarnevesht/android-tutorials/recyclerview
 
+#### include SearchBar to your project:
+
+add this code to the the project level build.gradle file
+
+```
+    allprojects {
+	    repositories {
+		    ...
+		    maven { url "https://jitpack.io" }
+	    }
+    }
+```
+
+add the dependency to the the app level build.gradle file
+
+```
+    dependencies {
+	    implementation 'com.github.mancj:MaterialSearchBar:0.8.2'
+    }
+```
+
 #### Go to res/layout/activity_main.xml, open the "Text" tab, and see the added Toolbar and Material Search bar as follows:
 
 ```
