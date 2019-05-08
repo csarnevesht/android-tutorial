@@ -20,6 +20,16 @@ If you haven't installed Android Developer Studio please do so by following the 
 - Android Development Environment Setup https://www.tutlane.com/tutorial/android/android-development-environment-setup
 - Android Studio Installation: https://www.tutlane.com/tutorial/android/android-studio-installation-for-development-environment
 
+## Markdown Navigator by Vladimir Schneider
+
+Readme files (README.md) can be viewed in Android Studio using Markdown Navigator plugin by installing it as follows:
+
+- Go to **Android Studio** -> **Preferences** -> **Plugins**
+- Search for **Markdown Navigator**
+- Click on **Install**
+- **Restart** **Android Studio**
+- Use **Markdown Navigator by Vladimir Schneider**
+
 ## Android Hello World App Example
 
 The following link explains how to create your first Android app.
@@ -239,3 +249,11 @@ In the tutorials we will be learning about:
 #### Close all previous projects.
 
 #### Open readme (README.md) file in trophies project.
+
+This readme file (README.md) can be viewed in Android Studio using Markdown Navigator plugin by installing it as follows:
+
+- Go to **Android Studio** -> **Preferences** -> **Plugins**
+- Search for **Markdown Navigator**
+- Click on **Install**
+- **Restart** **Android Studio**
+- Use **Markdown Navigator by Vladimir Schneider**
