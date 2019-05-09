@@ -1,7 +1,7 @@
 # Android Tutorial
 
 *******************************************************************************************************************
-# Open project 'firebase-search'
+# Create new branch 'firebase-search'
 *******************************************************************************************************************
 
 We will be using **MaterialSearchbar** from https://github.com/mancj/MaterialSearchBar
@@ -11,7 +11,7 @@ https://github.com/csarnevesht/android-tutorials/firebase
 
 #### Go to res/layout/activity_main.xml, open the "Text" tab, and see the added Toolbar and Material Search bar as follows:
 
-*app/src/main/res/layout/**activity_main.xml***
+*src/main/res/layout/**activity_main.xml***
 ```
       <com.mancj.materialsearchbar.MaterialSearchBar
              android:id="@+id/searchBar"
@@ -45,11 +45,11 @@ https://github.com/csarnevesht/android-tutorials/firebase
              app:layout_constraintTop_toBottomOf="@+id/searchBar" />
 ```
 
-#### Now change your activity code to do the following (see src/main/java/com/example/androidtutorial/MainActivity.java):
+#### Now change your activity code to do the following (see android-tutorials/src/main/java/com/example/androidtutorial/MainActivity.java):
 
 1. Declare the search bar in the **MainActivity** class:
 
-*app/src/main/java/com/example/androidtutorial/**MainActivity.java***
+*src/main/java/com/example/androidtutorial/**MainActivity.java***
 ```
     private MaterialSearchBar searchBar;
 
@@ -57,7 +57,7 @@ https://github.com/csarnevesht/android-tutorials/firebase
 
 2. Add the following to the **MainActivity** class:
 
-*app/src/main/java/com/example/androidtutorial/**MainActivity.java***
+*src/main/java/com/example/androidtutorial/**MainActivity.java***
 ```
    public class MainActivity extends AppCompatActivity {
 
@@ -104,6 +104,8 @@ https://github.com/csarnevesht/android-tutorials/firebase
 
 ```
 
+#### Commit and push all your changes.
+
 *******************************************************************************************************************
-# Open project 'master'
+# Done
 *******************************************************************************************************************

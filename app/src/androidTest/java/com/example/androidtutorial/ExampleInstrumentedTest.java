@@ -1,4 +1,4 @@
-package com.example.trophies;
+package com.example.androidtutorial;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

@@ -1,4 +1,4 @@
-package com.example.trophies;
+package com.example.androidtutorial;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;

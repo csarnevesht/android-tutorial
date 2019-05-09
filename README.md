@@ -1,5 +1,13 @@
 # Android Tutorials
 
+In the tutorials we will be learning about:
+
+- **basic concepts**
+- **recyclerview**
+- **search**
+- **firebase**
+- **firebase-search**
+
 The content in this repository will be mostly based off of the Android tutorial in the following link:
 https://www.tutlane.com/tutorial/android/android-tutorial.
 
@@ -72,6 +80,10 @@ At this point, if you haven't done so already, clone the android-tutorials githu
 If you have already cloned the android-tutorials github repository then open it:
 
 Open an existing Android Studio project (or File -> Open) and select **android-tutorials**
+
+## Open readme (README.md) file in Android Studio (Command - Shift - O - README.md)
+
+This readme file (README.md) can be viewed in Android Studio using Markdown Navigator plugin by installing **Markdown Navigator** by Vladimir Schneider (see instructions above)
 
 ## Android mobile app
 
@@ -238,35 +250,6 @@ The Constraint Layout is worth learning about, once you watch this video and pla
 as much fun as I did!
 
 https://www.youtube.com/watch?v=4N4bCdyGcUc
-
-*******************************************************************************************************************
-# Open project 'trophies' and open README.md file (Command - Shift - O - README.md)
-*******************************************************************************************************************
-
-## Trophies project
-
-This project was created as an **'empty'** project so you can add code as we go through each tutorial.
-
-In the tutorials we will be learning about:
-
-- **recyclerview**
-- **search**
-- **firebase**
-- **firebase-search**
-
-#### Open project **trophies**
-
-#### Close previous projects ui-elements-runtime and ui-elements-xml
-
-#### Open readme (README.md) file in trophies project (Command - Shift - O - README.md)
-
-This readme file (README.md) can be viewed in Android Studio using Markdown Navigator plugin by installing it as follows:
-
-- Go to **Android Studio** -> **Preferences** -> **Plugins**
-- Search for **Markdown Navigator**
-- Click on **Install**
-- **Restart** **Android Studio**
-- Use **Markdown Navigator by Vladimir Schneider**
 
 *******************************************************************************************************************
 # Create new branch 'recyclerview'

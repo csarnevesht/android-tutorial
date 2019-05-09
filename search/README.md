@@ -1,19 +1,19 @@
 # Android Tutorial
 
 *******************************************************************************************************************
-# Open project 'search'
+# Create new branch 'search'
 *******************************************************************************************************************
 
 ## Search
 
-We will be using MaterialSearchbar from https://github.com/mancj/MaterialSearchBar
+We will be using **MaterialSearchbar** from https://github.com/mancj/MaterialSearchBar
 
-Additionally, we will be adding search functionality to existing RecyclerView code from the RecyclerView lession in
+Additionally, we will be adding search functionality to existing RecyclerView code from the RecyclerView lesson in branch **recycleview**
 https://github.com/csarnevesht/android-tutorials/recyclerview
 
 #### include SearchBar to your project:
 
-add this code to the the project level build.gradle file
+add this code to the the project level build.gradle file:
 
 ```
     allprojects {
@@ -24,7 +24,7 @@ add this code to the the project level build.gradle file
     }
 ```
 
-add the dependency to the the app level build.gradle file
+add the dependency to the the app level build.gradle file:
 
 ```
     dependencies {
@@ -34,6 +34,7 @@ add the dependency to the the app level build.gradle file
 
 #### Go to res/layout/activity_main.xml, open the "Text" tab, and see the added Toolbar and Material Search bar as follows:
 
+*src/main/res/layout/**activity_main.xml***
 ```
       <com.mancj.materialsearchbar.MaterialSearchBar
              android:id="@+id/searchBar"
@@ -67,19 +68,19 @@ add the dependency to the the app level build.gradle file
              app:layout_constraintTop_toBottomOf="@+id/searchBar" />
 ```
 
-#### Now change your activity code to do the following (see src/main/java/com/example/androidtutorial/MainActivity.java):
+#### Now change your activity code to do the following:
 
-1. Declare the search bar in the MainActivity class:
+1. Declare the search bar in the **MainActivity** class:
 
-(src/main/java/com/example/androidtutorial/MainActivity.java)
+*src/main/java/com/example/androidtutorial/**MainActivity.java***
 ```
     private MaterialSearchBar searchBar;
 
 ```
 
-2. Add the following to MainActivity class:
+2. Add the following to the **MainActivity** class:
 
-(src/main/java/com/example/androidtutorial/MainActivity.java)
+*src/main/java/com/example/androidtutorial/**MainActivity.java***
 ```
    public class MainActivity extends AppCompatActivity {
 
@@ -116,7 +117,6 @@ add the dependency to the the app level build.gradle file
        }
 
        // search data
-       // search data
        private void doSearch(String searchText) {
            Log.d("LOG_TAG", getClass().getSimpleName() + " doSearch " + searchBar.getText());
 
@@ -127,8 +127,8 @@ add the dependency to the the app level build.gradle file
 
 ```
 
+#### Commit and push all your changes.
 
 *******************************************************************************************************************
-# Open project 'firebase'
+# Create new branch 'firebase'
 *******************************************************************************************************************
-

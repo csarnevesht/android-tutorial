@@ -1,7 +1,7 @@
 # Android Tutorial
 
 *******************************************************************************************************************
-# Open project 'firebase'
+# Create new branch 'firebase'
 *******************************************************************************************************************
 
 ## Firebase
@@ -87,7 +87,7 @@ Note: see https://firebase.google.com/docs/android/setup#available-libraries
 
 1. In **MainActivity.java** add code to access a **Cloud Firestore** instance from the activity and create a reference to the **Data** collection:
 
-*app/src/main/java/com/example/androidtutorial/**MainActivity.java***
+*src/main/java/com/example/androidtutorial/**MainActivity.java***
 ```
     public class MainActivity extends AppCompatActivity {
 
@@ -114,7 +114,7 @@ Note: see https://firebase.google.com/docs/android/setup#available-libraries
 
 3. In **TrophyAdapter.java** replace the class parent to **FirestoreRecyclerAdapter<Trophy, TrophyHolder>** and implement methods **onCreateViewHolder**, **onBindViewHolder** and the following **constructor** :
 
-*app/src/main/java/com/example/**TrophyAdapter.java***
+*src/main/java/com/example/androidtutorial/**TrophyAdapter.java***
 ```
     public class TrophyAdapter extends FirestoreRecyclerAdapter<Trophy, TrophyHolder>  {
 
@@ -140,7 +140,7 @@ Note: see https://firebase.google.com/docs/android/setup#available-libraries
 
 4. In **MainActivity.java** add the following code which uses **FirestoreRecyclerOptions**, and **TrophyAdapter** (**FirestoreRecyclerAdapter**) to query the **Cloud Firestore**:
 
-*app/src/main/java/com/example/androidtutorial/**MainActivity.java***
+*src/main/java/com/example/androidtutorial/**MainActivity.java***
 ```
         //load data into recycler view onStart
         @Override
@@ -161,6 +161,8 @@ Note: see https://firebase.google.com/docs/android/setup#available-libraries
 
 ```
 
+#### Commit and push all your changes.
+
 *******************************************************************************************************************
-# Open project 'firebase-search'
+# Create new branch 'firebase-search'
 *******************************************************************************************************************

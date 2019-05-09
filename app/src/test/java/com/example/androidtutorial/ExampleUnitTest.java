@@ -1,4 +1,4 @@
-package com.example.trophies;
+package com.example.androidtutorial;
 
 import org.junit.Test;
 
