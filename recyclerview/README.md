@@ -25,7 +25,7 @@ It does this by assigning the view holder to a position, and calling the adapter
 That method uses the view holder's position to determine what the contents should be, based on its list position.
 
 
-#### Create a RecyclerView View in your layout (activity_main.xml)
+#### Add RecyclerView to your layout
 
 - Go to **_activity_main.xml_**, open the **Design** tab, and in **Palete** -> **Containers** you will find the **RecyclerView**.
 - Drag it to the Contraint Layout.
@@ -102,9 +102,16 @@ In this tutorial we will have a **title** and a **description** for a trophy.
 
 #### Create an adapter to manage trophy views and data.
 
-Follow these steps to create the adapter:
+To feed all your data to the RecyclerView list, you must extend the RecyclerView.Adapter class.
+The adapter creates views for items in the RecyclerView list.
+
+Follow the following steps to create the adapter.
 
 1. Create a trophy **view holder**
+
+The views in the list are represented by view holder objects. These objects are instances of a class
+you define by extending RecyclerView.ViewHolder. Each view holder is in charge of displaying a single
+item with a view.
 
 *src/main/java/com/example/androidtutorial/**TrophyHolder.java***
 ```
