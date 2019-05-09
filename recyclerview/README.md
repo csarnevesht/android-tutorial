@@ -150,6 +150,7 @@ item with a view.
 3. Extend the trophy adapter **TrophyAdapter** class from **RecyclerView.Adapter<TrophyHolder>** and
    implement override methods **onCreateViewHolder**, **onBindViewHolder** and **getItemCount**.
 
+*src/main/java/com/example/androidtutorial/**TrophyAdapter.java***
    ```
    public class TrophyAdapter extends RecyclerView.Adapter<TrophyHolder> {
        private Context context;
@@ -207,8 +208,8 @@ Change method **onBindViewHolder()** method to bind the trophy item.
 ```
     @Override
     public void onBindViewHolder(TrophyHolder holder, int position) {
-     Trophy trophy = trophies.get(position);
-     holder.setDetails(trophy);
+        Trophy trophy = trophies.get(position);
+        holder.setDetails(trophy);
     }
 ```
 
