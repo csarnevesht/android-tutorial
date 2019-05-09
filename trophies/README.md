@@ -244,7 +244,7 @@ as much fun as I did!
 https://www.youtube.com/watch?v=4N4bCdyGcUc
 
 *******************************************************************************************************************
-# Open project 'trophies'
+# Open project 'trophies' and open README.md file (Command - Shift - O - README.md)
 *******************************************************************************************************************
 
 ## Trophies project
@@ -262,7 +262,7 @@ In the tutorials we will be learning about:
 
 #### Close previous projects ui-elements-runtime and ui-elements-xml
 
-#### Open readme (README.md) file in trophies project
+#### Open readme (README.md) file in trophies project (Command - Shift - O - README.md)
 
 This readme file (README.md) can be viewed in Android Studio using Markdown Navigator plugin by installing it as follows:
 

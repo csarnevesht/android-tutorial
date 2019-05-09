@@ -253,7 +253,7 @@ as much fun as I did!
 https://www.youtube.com/watch?v=4N4bCdyGcUc
 
 *******************************************************************************************************************
-# Open project 'trophies'
+# Open project 'trophies' and open README.md file (Command - Shift - O - README.md)
 *******************************************************************************************************************
 
 ## Trophies project
