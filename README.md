@@ -139,7 +139,7 @@ https://www.tutlane.com/tutorial/android/android-view-and-viewgroup-with-example
 for more information see https://developer.android.com/jetpack/androidx
 
 *******************************************************************************************************************
-# Open project 'ui-elements-runtime'
+# Open project 'ui-elements-runtime' in tutorial-projects
 *******************************************************************************************************************
 
 ## UI Elements
@@ -186,7 +186,11 @@ public class TrophiesActivity extends AppCompatActivity {
 run the app.
 
 *******************************************************************************************************************
-# Open project 'ui-elements-xml'
+# Close project 'ui-elements-runtime' and go back to original project 'android-tutorials'
+*******************************************************************************************************************
+
+*******************************************************************************************************************
+# Open project 'ui-elements-xml' in tutorial-projects
 *******************************************************************************************************************
 
 ## Declare UI elements in XML
@@ -245,6 +249,10 @@ For a more detailed explanation of setContentView method, see https://androidrid
 run the app.
 
 *******************************************************************************************************************
+# Close project 'ui-elements-xml' and go back to original project 'android-tutorials'
+*******************************************************************************************************************
+
+*******************************************************************************************************************
 # Constraint layout
 *******************************************************************************************************************
 
@@ -278,7 +286,6 @@ The **adapter** creates view holders as needed.
 The **adapter** also **binds** the **view holders** to their data.
 It does this by assigning the view holder to a position, and calling the adapter's **onBindViewHolder()** method.
 That method uses the view holder's position to determine what the contents should be, based on its list position.
-
 
 #### Add RecyclerView to your layout
 
