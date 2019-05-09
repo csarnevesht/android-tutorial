@@ -43,26 +43,29 @@ In the above link, you will learn how to create a new project with an Empty Acti
 You will be exposed to files and concepts which will be explained in more details later.
 For now, just try to remember the following pieces, you don't need to understand them in detail now:
 
- - an **Android layout file**, activity_main.xml (*app/android-tutorials/src/main/res/layout/activity_main.xml*),
- - an **Android Main activity file**, MainActivity.java (*app/android-tutorials/src/main/java/com/example/androidtutorial/MainActivity.java*)
- - **Android Manifest file**, **AndroidManifest.xml** (*app/android-tutorials/src/main/AndroidManifest.xml*)
+ - an **Android layout file**, activity_main.xml (*app/src/main/res/layout/activity_main.xml*),
+ - an **Android Main activity file**, MainActivity.java (*app/src/main/java/com/example/androidtutorial/MainActivity.java*)
+ - **Android Manifest file**, **AndroidManifest.xml** (*app/src/main/AndroidManifest.xml*)
  - Android emulator
  - running the Android app
 
 **_HINT_**: in Android Studio, use Cmd-Shift-O (or go to "Navigate" -> "File") and type MainActivity.java or activity_main.xml (or any file name) to open a file.
 
-## Clone android-tutorials github repository.
+## Clone android-tutorials github repository
 
 At this point, if you haven't done so already, you will need to clone the android-tutorials github repository.
 In this repository you will find the following projects, each explaining a specific Android feature:
 
 - ui-elements-runtime
 - ui-elements-xml
-- trophies
 - recyclerview
 - search
 - firebase
 - firebase-search
+
+## Open android-tutorials in Android Studio
+
+Open an existing Android Studio project (or File -> Open) and select **android-tutorials**
 
 ## Android mobile app
 
@@ -139,7 +142,7 @@ To create UI elements at runtime, we need to create our own custom View and View
 Following is the example of creating an UI elements (TextView, EditText, Button) in LinearLayout using custom View and ViewGroup objects in
 an activity programmatically.
 
-*app/android-tutorials/src/main/java/com/example/androidtutorial/MainActivity.java*
+*app/src/main/java/com/example/androidtutorial/MainActivity.java*
 ```
 public class MainActivity extends AppCompatActivity {
     @Override
@@ -179,7 +182,7 @@ View hierarchy that defines our layout.
 Following is an example of defining some UI elements (TextView, EditText, Button) in an XML file (activity_main.xml)
 using LinearLayout.
 
-*app/android-tutorials/src/main/res/layout/activity_main.xml*
+*app/src/main/res/layout/activity_main.xml*
 ```
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -245,11 +248,11 @@ In the tutorials we will be learning about:
 - **firebase**
 - **firebase-search**
 
-#### Open project **trophies**.
+#### Open project **trophies**
 
-#### Close all previous projects.
+#### Close previous projects ui-elements-runtime and ui-elements-xml
 
-#### Open readme (README.md) file in trophies project.
+#### Open readme (README.md) file in trophies project
 
 This readme file (README.md) can be viewed in Android Studio using Markdown Navigator plugin by installing it as follows:
 
@@ -274,10 +277,70 @@ Android **RecyclerView** is the advanced version of ListView for more improvemen
 The page that we are going to design contains our trophies information with **RecyclerView**.
 
 #### Create a class Trophy.java with getter/setter methods for each row in RecyclerView.
-see *android-tutorials/src/main/java/com/example/androidtutorial/**Trophy.java***.
+
+In this tutorial we will have a **title** and a **description** for a trophy:
+
+```
+    public class Trophy {
+        String title;
+        String description;
+
+        public Trophy(String title, String description) {
+            this.title = title;
+            this.description = description;
+        }
+
+        public String getTitle() {
+            return title;
+        }
+
+        public void setTitle(String title) {
+            this.title = title;
+        }
+
+        public String getDescription() {
+            return description;
+        }
+
+        public void setDescription(String description) {
+            this.description = description;
+        }
+    }
+```
 
 #### Create a layout for RecyclerView item row trophies_item_row.xml.
-see *android-tutorials/src/main/res/layout/**trophies_item_row.xml***.
+
+*src/main/java/com/example/androidtutorial/**trophies_item_row.java***
+```
+    <?xml version="1.0" encoding="utf-8"?>
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/txtTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="1dp"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txtDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="1dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtTitle" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+```
 
 #### Now create adapter class TrophyAdapter.java step-wise for recyclerview base.
 Follow these steps to easily create the adapter without any complex structure.
@@ -285,7 +348,7 @@ Below steps are for RecyclerView adapter class.
 
 1. Create class **TrophyAdapter**
 
-*app/android-tutorials/src/main/java/com/example/androidtutorial/**TrophyAdapter.java***
+*src/main/java/com/example/androidtutorial/**TrophyAdapter.java***
 ```
     public class TrophyAdapter {
     }
@@ -293,16 +356,21 @@ Below steps are for RecyclerView adapter class.
 
 2. Create **ViewHolder** for RecyclerView
 
-*app/android-tutorials/src/main/java/com/example/androidtutorial/**TrophyHolder.java***
+*src/main/java/com/example/androidtutorial/**TrophyHolder.java***
 ```
     public class TrophyHolder extends RecyclerView.ViewHolder {
         private TextView txtTitle;
         private TextView txtDescription;
 
         public TrophyHolder(View itemView) {
-          super(itemView);
-          txtTitle = itemView.findViewById(R.id.txtTitle);
-          txtDescription = itemView.findViewById(R.id.txtDescription);
+            super(itemView);
+            txtTitle = itemView.findViewById(R.id.txtTitle);
+            txtDescription = itemView.findViewById(R.id.txtDescription);
+        }
+
+        public void setDetails(Trophy trophy) {
+            txtTitle.setText(trophy.getTitle());
+            txtDescription.setText(trophy.getDescription());
         }
     }
 ```
@@ -311,24 +379,49 @@ Below steps are for RecyclerView adapter class.
 3. Extend adapter **TrophyAdapter** class to **RecyclerView.Adapter<TrophyHolder>** and
    implement override methods **onCreateViewHolder**, **onBindViewHolder** and **getItemCount**.
 
-(see *android-tutorials/src/main/java/com/example/androidtutorial/**TrophyAdapter.java***)
+   ```
+   public class TrophyAdapter extends RecyclerView.Adapter<TrophyHolder> {
+       private Context context;
+       private ArrayList<Trophy> trophies;
+
+       public TrophyAdapter(Context context, ArrayList<Trophy> trophies) {
+           this.context = context;
+           this.trophies = trophies;
+       }
+
+       @Override
+       public int getItemCount() {
+       }
+
+       @Override
+       public TrophyHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+       }
+
+       @Override
+       public void onBindViewHolder(TrophyHolder holder, int position) {
+       }
+
+   }
+   ```
 
 4. Define context and trophies ArrayList and create a constructor.
 
-(android-tutorials/src/main/java/com/example/androidtutorial/**TrophyAdapter.java**)
+*src/main/java/com/example/androidtutorial/**TrophyAdapter.java***
 ```
-    private Context context;
-    private ArrayList<Trophy> trophies;
+    public class TrophyAdapter extends RecyclerView.Adapter<TrophyHolder> {
+        private Context context;
+        private ArrayList<Trophy> trophies;
 
-    public TrophyAdapter(Context context, ArrayList<Trophy> trophies) {
-        this.context = context;
-        this.trophies = trophies;
+        public TrophyAdapter(Context context, ArrayList<Trophy> trophies) {
+            this.context = context;
+            this.trophies = trophies;
+        }
     }
-```
+ ```
 
 5. Change **getItemCount()** method
 
-*app/android-tutorials/src/main/java/com/example/androidtutorial/**TrophyAdapter.java***
+*src/main/java/com/example/androidtutorial/**TrophyAdapter.java***
 ```
     @Override
     public int getItemCount() {
@@ -340,7 +433,7 @@ Below steps are for RecyclerView adapter class.
 
 **_NOTE_**: **Inflate** means to **render** or **show** the page for each trophy row item in the recyclerview list.
 
-*app/android-tutorials/src/main/java/com/example/androidtutorial/**TrophyAdapter.java***
+*src/main/java/com/example/androidtutorial/**TrophyAdapter.java***
 ```
     @Override
     public TrophyHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -351,7 +444,7 @@ Below steps are for RecyclerView adapter class.
 
 7. Create a method in **TrophyHolder** class to set values for each trophy row item in the recyclerview list.
 
-*app/android-tutorials/src/main/java/com/example/androidtutorial/**TrophyAdapter.java***
+*src/main/java/com/example/androidtutorial/**TrophyAdapter.java***
 ```
     public void setDetails(Trophy trophy) {
         txtTitle.setText(trophy.getTrophyTitle());
@@ -361,7 +454,7 @@ Below steps are for RecyclerView adapter class.
 
 8. Call method **onBindViewHolder()** method to bind the trophy row item of recyclerview
 
-*app/android-tutorials/src/main/java/com/example/androidtutorial/**TrophyAdapter.java***
+*src/main/java/com/example/androidtutorial/**TrophyAdapter.java***
 ```
     @Override
     public void onBindViewHolder(TrophyHolder holder, int position) {
@@ -370,14 +463,14 @@ Below steps are for RecyclerView adapter class.
     }
 ```
 
-#### Now change your activity code to do the following (see android-tutorials/src/main/java/com/example/androidtutorial/MainActivity.java):
+#### Now change your activity code to do the following:
 
     - set recyclerview layout manager
     - set adapter for recyclerview
     - fill data for recyclerview items
     - set data to adapter and notify data
 
-*app/android-tutorials/src/main/java/com/example/androidtutorial/**MainActivity.java***
+*src/main/java/com/example/androidtutorial/**MainActivity.java***
 ```
     public class MainActivity extends AppCompatActivity {
 
@@ -421,8 +514,9 @@ determining the policy for when to recycle item views that are no longer visible
 By changing the layout manager, recyclerview can be used to implement a standard vertically scrolling list,
 a uniform grid, staggered grids, horizontally scrolling collections and more.
 
+#### Run/Debug the app
 
-#### Commit and push all your changes.
+#### Commit and push all your changes
 
 *******************************************************************************************************************
 # Create new branch 'search'
@@ -437,7 +531,7 @@ https://github.com/csarnevesht/android-tutorials/recyclerview
 
 #### include SearchBar to your project:
 
-add this code to the the project level build.gradle file
+add this code to the the project level build.gradle file:
 
 ```
     allprojects {
@@ -448,7 +542,7 @@ add this code to the the project level build.gradle file
     }
 ```
 
-add the dependency to the the app level build.gradle file
+add the dependency to the the app level build.gradle file:
 
 ```
     dependencies {
@@ -458,7 +552,7 @@ add the dependency to the the app level build.gradle file
 
 #### Go to res/layout/activity_main.xml, open the "Text" tab, and see the added Toolbar and Material Search bar as follows:
 
-*app/android-tutorials/src/main/res/layout/**activity_main.xml***
+*src/main/res/layout/**activity_main.xml***
 ```
       <com.mancj.materialsearchbar.MaterialSearchBar
              android:id="@+id/searchBar"
@@ -492,11 +586,11 @@ add the dependency to the the app level build.gradle file
              app:layout_constraintTop_toBottomOf="@+id/searchBar" />
 ```
 
-#### Now change your activity code to do the following (see android-tutorials/src/main/java/com/example/androidtutorial/MainActivity.java):
+#### Now change your activity code to do the following:
 
 1. Declare the search bar in the **MainActivity** class:
 
-*app/android-tutorials/src/main/java/com/example/androidtutorial/**MainActivity.java***
+*src/main/java/com/example/androidtutorial/**MainActivity.java***
 ```
     private MaterialSearchBar searchBar;
 
@@ -504,7 +598,7 @@ add the dependency to the the app level build.gradle file
 
 2. Add the following to the **MainActivity** class:
 
-*app/android-tutorials/src/main/java/com/example/androidtutorial/**MainActivity.java***
+*src/main/java/com/example/androidtutorial/**MainActivity.java***
 ```
    public class MainActivity extends AppCompatActivity {
 
@@ -640,7 +734,7 @@ Note: see https://firebase.google.com/docs/android/setup#available-libraries
 
 1. In **MainActivity.java** add code to access a **Cloud Firestore** instance from the activity and create a reference to the **Data** collection:
 
-*app/android-tutorials/src/main/java/com/example/androidtutorial/**MainActivity.java***
+*src/main/java/com/example/androidtutorial/**MainActivity.java***
 ```
     public class MainActivity extends AppCompatActivity {
 
@@ -667,7 +761,7 @@ Note: see https://firebase.google.com/docs/android/setup#available-libraries
 
 3. In **TrophyAdapter.java** replace the class parent to **FirestoreRecyclerAdapter<Trophy, TrophyHolder>** and implement methods **onCreateViewHolder**, **onBindViewHolder** and the following **constructor** :
 
-*app/android-tutorials/src/main/java/com/example/**TrophyAdapter.java***
+*src/main/java/com/example/androidtutorial/**TrophyAdapter.java***
 ```
     public class TrophyAdapter extends FirestoreRecyclerAdapter<Trophy, TrophyHolder>  {
 
@@ -693,7 +787,7 @@ Note: see https://firebase.google.com/docs/android/setup#available-libraries
 
 4. In **MainActivity.java** add the following code which uses **FirestoreRecyclerOptions**, and **TrophyAdapter** (**FirestoreRecyclerAdapter**) to query the **Cloud Firestore**:
 
-*app/android-tutorials/src/main/java/com/example/androidtutorial/**MainActivity.java***
+*src/main/java/com/example/androidtutorial/**MainActivity.java***
 ```
         //load data into recycler view onStart
         @Override
@@ -727,7 +821,7 @@ https://github.com/csarnevesht/android-tutorials/firebase
 
 #### Go to res/layout/activity_main.xml, open the "Text" tab, and see the added Toolbar and Material Search bar as follows:
 
-*app/android-tutorials/src/main/res/layout/**activity_main.xml***
+*src/main/res/layout/**activity_main.xml***
 ```
       <com.mancj.materialsearchbar.MaterialSearchBar
              android:id="@+id/searchBar"
@@ -765,7 +859,7 @@ https://github.com/csarnevesht/android-tutorials/firebase
 
 1. Declare the search bar in the **MainActivity** class:
 
-*app/android-tutorials/src/main/java/com/example/androidtutorial/**MainActivity.java***
+*src/main/java/com/example/androidtutorial/**MainActivity.java***
 ```
     private MaterialSearchBar searchBar;
 
@@ -773,7 +867,7 @@ https://github.com/csarnevesht/android-tutorials/firebase
 
 2. Add the following to the **MainActivity** class:
 
-*app/android-tutorials/src/main/java/com/example/androidtutorial/**MainActivity.java***
+*src/main/java/com/example/androidtutorial/**MainActivity.java***
 ```
    public class MainActivity extends AppCompatActivity {
 

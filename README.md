@@ -51,7 +51,7 @@ For now, just try to remember the following pieces, you don't need to understand
 
 **_HINT_**: in Android Studio, use Cmd-Shift-O (or go to "Navigate" -> "File") and type MainActivity.java or activity_main.xml (or any file name) to open a file.
 
-## Clone android-tutorials github repository.
+## Clone android-tutorials github repository
 
 At this point, if you haven't done so already, you will need to clone the android-tutorials github repository.
 In this repository you will find the following projects, each explaining a specific Android feature:
@@ -62,6 +62,10 @@ In this repository you will find the following projects, each explaining a speci
 - search
 - firebase
 - firebase-search
+
+## Open android-tutorials in Android Studio
+
+Open an existing Android Studio project (or File -> Open) and select **android-tutorials**
 
 ## Android mobile app
 
@@ -244,11 +248,11 @@ In the tutorials we will be learning about:
 - **firebase**
 - **firebase-search**
 
-#### Open project **trophies**.
+#### Open project **trophies**
 
-#### Close all previous projects.
+#### Close previous projects ui-elements-runtime and ui-elements-xml
 
-#### Open readme (README.md) file in trophies project.
+#### Open readme (README.md) file in trophies project
 
 This readme file (README.md) can be viewed in Android Studio using Markdown Navigator plugin by installing it as follows:
 
