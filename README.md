@@ -537,11 +537,9 @@ Change method **onBindViewHolder()** method to bind the trophy item.
 
 A decent video tutorial for RecyclerView can be found at https://www.youtube.com/watch?v=Vyqz_-sJGFk
 
-
 *******************************************************************************************************************
 # Create new branch 'search'
 *******************************************************************************************************************
-
 ## Search
 
 We will be using **MaterialSearchbar** from https://github.com/mancj/MaterialSearchBar
