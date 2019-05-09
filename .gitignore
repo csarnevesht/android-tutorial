@@ -22,3 +22,5 @@ search/app/app.iml
 android-tutorials.iml
 local.properties
 **/local.properties
+recyclerview/local.properties
+recyclerview/recyclerview.iml

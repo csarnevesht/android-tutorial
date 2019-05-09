@@ -33,7 +33,7 @@ That method uses the view holder's position to determine what the contents shoul
 
 The page that we are going to design contains our trophies information with **RecyclerView**.
 
-#### Create a class to hold the Trophy data title and description.
+#### Create a class to hold the Trophy data with *title* and *description*.
 
 In this tutorial we will have a **title** and a **description** for a trophy.
 
@@ -150,7 +150,6 @@ item with a view.
 3. Extend the trophy adapter **TrophyAdapter** class from **RecyclerView.Adapter<TrophyHolder>** and
    implement override methods **onCreateViewHolder**, **onBindViewHolder** and **getItemCount**.
 
-*src/main/java/com/example/androidtutorial/**TrophyAdapter.java***
    ```
    public class TrophyAdapter extends RecyclerView.Adapter<TrophyHolder> {
        private Context context;
@@ -208,8 +207,8 @@ Change method **onBindViewHolder()** method to bind the trophy item.
 ```
     @Override
     public void onBindViewHolder(TrophyHolder holder, int position) {
-        Trophy trophy = trophies.get(position);
-        holder.setDetails(trophy);
+     Trophy trophy = trophies.get(position);
+     holder.setDetails(trophy);
     }
 ```
 
@@ -258,14 +257,14 @@ Change method **onBindViewHolder()** method to bind the trophy item.
     }
 ```
 
-The LayoutManager is responsible for measuring and positioning item views within the recyclerview as well as
-determining the policy for when to recycle item views that are no longer visible to the user.
-By changing the layout manager, recyclerview can be used to implement a standard vertically scrolling list,
-a uniform grid, staggered grids, horizontally scrolling collections and more.
-
 #### Run/Debug the app
 
 #### Commit and push all your changes
+
+#### Review general concepts by watching video tutorials
+
+A decent video tutorial for RecyclerView can be found at https://www.youtube.com/watch?v=Vyqz_-sJGFk
+
 
 *******************************************************************************************************************
 # Create new branch 'search'
