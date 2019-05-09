@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         createListData();
     }
 
-    // - set data to adapter and notify data
+    // - create data and notify adapter
     private void createListData() {
         Trophy trophy;
         trophy = new Trophy("Baseball - Arman Rafati - 2018", "Epic year for MVP player Arman Rafati ... ");
