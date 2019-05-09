@@ -6,6 +6,8 @@
 
 Android **RecyclerView** is the advanced version of ListView for more improvements and features.
 
+#### Add RecyclerView to your layout
+
 - Go to **_activity_main.xml_**, open the **Design** tab, and in **Palete** -> **Containers** you will find the **RecyclerView**.
 - Drag it to the Contraint Layout.
 - You will be asked if you want to add the library to project dependencies, click **Ok**.  When you do, the library will be added to the app/build.gradle file.
@@ -44,7 +46,7 @@ In this tutorial we will have a **title** and a **description** for a trophy:
     }
 ```
 
-#### Create a layout for RecyclerView item row trophies_item_row.xml.
+#### Create a layout (trophies_item_row.xml) for each item in the RecyclerView list.
 
 *src/main/java/com/example/androidtutorial/**trophies_item_row.java***
 ```
@@ -78,9 +80,12 @@ In this tutorial we will have a **title** and a **description** for a trophy:
     </androidx.constraintlayout.widget.ConstraintLayout>
 ```
 
-#### Now create adapter class TrophyAdapter.java step-wise for recyclerview base.
-Follow these steps to easily create the adapter without any complex structure.
-Below steps are for RecyclerView adapter class.
+#### Create an adapter (TrophyAdapter.java) for the RecycleView
+
+To feed all your data to the RecyclerView list, you must extend the RecyclerView.Adapter class. 
+The adapter creates views for items in the RecyclerView list.
+
+Follow the following steps to create the adapter.
 
 1. Create class **TrophyAdapter**
 
@@ -91,6 +96,10 @@ Below steps are for RecyclerView adapter class.
 ```
 
 2. Create **ViewHolder** for RecyclerView
+
+The views in the list are represented by view holder objects. These objects are instances of a class 
+you define by extending RecyclerView.ViewHolder. Each view holder is in charge of displaying a single 
+item with a view.
 
 *src/main/java/com/example/androidtutorial/**TrophyHolder.java***
 ```
@@ -165,9 +174,9 @@ Below steps are for RecyclerView adapter class.
     }
 ```
 
-6. Inflate item layout in **onCreateViewHolder()** method and inflate **trophies_item_row** for the recyclerview.
+6. Inflate the item layout (**trophies_item_row.xml**) in **onCreateViewHolder()** method for the RecyclerView list.
 
-**_NOTE_**: **Inflate** means to **render** or **show** the page for each trophy row item in the recyclerview list.
+**_NOTE_**: **Inflate** means to **render** or **show** the page for each trophy item in the RecyclerView list.
 
 *src/main/java/com/example/androidtutorial/**TrophyAdapter.java***
 ```
@@ -178,7 +187,7 @@ Below steps are for RecyclerView adapter class.
     }
 ```
 
-7. Create a method in **TrophyHolder** class to set values for each trophy row item in the recyclerview list.
+7. Create a method in **TrophyHolder** class to set values for each trophy item in the RecyclerView list.
 
 *src/main/java/com/example/androidtutorial/**TrophyAdapter.java***
 ```
@@ -188,7 +197,7 @@ Below steps are for RecyclerView adapter class.
     }
 ```
 
-8. Call method **onBindViewHolder()** method to bind the trophy row item of recyclerview
+8. Call method **onBindViewHolder()** method to bind the trophy item of the RecyclerView list.
 
 *src/main/java/com/example/androidtutorial/**TrophyAdapter.java***
 ```
