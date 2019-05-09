@@ -15,7 +15,7 @@ View hierarchy that defines our layout.
 Following is an example of defining some UI elements (TextView, EditText, Button) in an XML file (main_activity.xml)
 using LinearLayout.
 
-*app/src/main/res/layout/main_activity.xml*
+*app/app/src/main/res/layout/main_activity.xml*
 ```
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"

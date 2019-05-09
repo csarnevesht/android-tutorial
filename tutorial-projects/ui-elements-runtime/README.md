@@ -22,7 +22,7 @@ To create UI elements at runtime, we need to create our own custom View and View
 Following is the example of creating an UI elements (TextView, EditText, Button) in LinearLayout using custom View and ViewGroup objects in
 an activity programmatically.
 
-*app/src/main/java/com/example/androidtutorial/MainActivity.java*
+*app/app/src/main/java/com/example/androidtutorial/MainActivity.java*
 ```
 public class TrophiesActivity extends AppCompatActivity {
     @Override

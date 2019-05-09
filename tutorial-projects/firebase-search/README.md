@@ -11,7 +11,7 @@ https://github.com/csarnevesht/android-tutorial/firebase
 
 #### Go to res/layout/trophies_activity.xml, open the "Text" tab, and see the added Toolbar and Material Search bar as follows:
 
-*src/main/res/layout/**trophies_activity.xml***
+*app/src/main/res/layout/**trophies_activity.xml***
 ```
       <com.mancj.materialsearchbar.MaterialSearchBar
              android:id="@+id/searchBar"
@@ -45,11 +45,11 @@ https://github.com/csarnevesht/android-tutorial/firebase
              app:layout_constraintTop_toBottomOf="@+id/searchBar" />
 ```
 
-#### Now change your activity code to do the following (see android-tutorial/src/main/java/com/example/androidtutorial/TrophiesActivity.java):
+#### Now change your activity code to do the following (see android-tutorial/app/src/main/java/com/example/androidtutorial/TrophiesActivity.java):
 
 1. Declare the search bar in the **TrophiesActivity** class:
 
-*src/main/java/com/example/androidtutorial/**TrophiesActivity.java***
+*app/src/main/java/com/example/androidtutorial/**TrophiesActivity.java***
 ```
     private MaterialSearchBar searchBar;
 
@@ -57,7 +57,7 @@ https://github.com/csarnevesht/android-tutorial/firebase
 
 2. Add the following to the **TrophiesActivity** class:
 
-*src/main/java/com/example/androidtutorial/**TrophiesActivity.java***
+*app/src/main/java/com/example/androidtutorial/**TrophiesActivity.java***
 ```
    public class TrophiesActivity extends AppCompatActivity {
 

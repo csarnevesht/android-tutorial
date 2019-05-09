@@ -87,7 +87,7 @@ Note: see https://firebase.google.com/docs/android/setup#available-libraries
 
 1. In **TrophiesActivity.java** add code to access a **Cloud Firestore** instance from the activity and create a reference to the **Data** collection:
 
-*src/main/java/com/example/androidtutorial/**TrophiesActivity.java***
+*app/src/main/java/com/example/androidtutorial/**TrophiesActivity.java***
 ```
     public class TrophiesActivity extends AppCompatActivity {
 
@@ -114,7 +114,7 @@ Note: see https://firebase.google.com/docs/android/setup#available-libraries
 
 3. In **TrophyAdapter.java** replace the class parent to **FirestoreRecyclerAdapter<Trophy, TrophyHolder>** and implement methods **onCreateViewHolder**, **onBindViewHolder** and the following **constructor** :
 
-*src/main/java/com/example/androidtutorial/**TrophyAdapter.java***
+*app/src/main/java/com/example/androidtutorial/**TrophyAdapter.java***
 ```
     public class TrophyAdapter extends FirestoreRecyclerAdapter<Trophy, TrophyHolder>  {
 
@@ -140,7 +140,7 @@ Note: see https://firebase.google.com/docs/android/setup#available-libraries
 
 4. In **TrophiesActivity.java** add the following code which uses **FirestoreRecyclerOptions**, and **TrophyAdapter** (**FirestoreRecyclerAdapter**) to query the **Cloud Firestore**:
 
-*src/main/java/com/example/androidtutorial/**TrophiesActivity.java***
+*app/src/main/java/com/example/androidtutorial/**TrophiesActivity.java***
 ```
         //load data into recycler view onStart
         @Override

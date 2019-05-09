@@ -43,7 +43,7 @@ The page that we are going to design contains our trophies information with **Re
 
 In this tutorial we will have a **title** and a **description** for a trophy.
 
-*src/main/java/com/example/androidtutorial/**Trophy.java***
+*app/src/main/java/com/example/androidtutorial/**Trophy.java***
 ```
     public class Trophy {
         String title;
@@ -74,7 +74,7 @@ In this tutorial we will have a **title** and a **description** for a trophy.
 
 #### Create a layout for each trophy item in the RecyclerView.
 
-*src/main/java/com/example/androidtutorial/**trophies_item.java***
+*app/src/main/java/com/example/androidtutorial/**trophies_item.java***
 ```
     <?xml version="1.0" encoding="utf-8"?>
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -120,7 +120,7 @@ The views in the list are represented by view holder objects. These objects are 
 you define by extending RecyclerView.ViewHolder. Each view holder is in charge of displaying a single
 item with a view.
 
-*src/main/java/com/example/androidtutorial/**TrophyHolder.java***
+*app/src/main/java/com/example/androidtutorial/**TrophyHolder.java***
 ```
     public class TrophyHolder extends RecyclerView.ViewHolder {
         private TextView txtTitle;
@@ -141,7 +141,7 @@ item with a view.
 
 2. Create a trophy **adapter** class
 
-*src/main/java/com/example/androidtutorial/**TrophyAdapter.java***
+*app/src/main/java/com/example/androidtutorial/**TrophyAdapter.java***
 ```
     public class TrophyAdapter {
         private Context context;
@@ -184,7 +184,7 @@ item with a view.
 
 4. Change **getItemCount()** method
 
-*src/main/java/com/example/androidtutorial/**TrophyAdapter.java***
+*app/src/main/java/com/example/androidtutorial/**TrophyAdapter.java***
 ```
     @Override
     public int getItemCount() {
@@ -197,7 +197,7 @@ item with a view.
 **_NOTE_**: **Inflate** means to **render** or **show** the page for each trophy item in the recyclerview list.
 Inflate the trophy item layout (**trophies_item.xml**) in method **onCreateViewHolder()**.
 
-*src/main/java/com/example/androidtutorial/**TrophyAdapter.java***
+*app/src/main/java/com/example/androidtutorial/**TrophyAdapter.java***
 ```
     @Override
     public TrophyHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -210,7 +210,7 @@ Inflate the trophy item layout (**trophies_item.xml**) in method **onCreateViewH
 
 Change method **onBindViewHolder()** method to bind the trophy item.
 
-*src/main/java/com/example/androidtutorial/**TrophyAdapter.java***
+*app/src/main/java/com/example/androidtutorial/**TrophyAdapter.java***
 ```
     @Override
     public void onBindViewHolder(TrophyHolder holder, int position) {
@@ -225,7 +225,7 @@ Change method **onBindViewHolder()** method to bind the trophy item.
     - set adapter for recyclerview
     - create data and notify adapter
 
-*src/main/java/com/example/androidtutorial/**TrophiesActivity.java***
+*app/src/main/java/com/example/androidtutorial/**TrophiesActivity.java***
 ```
     public class TrophiesActivity extends AppCompatActivity {
 
