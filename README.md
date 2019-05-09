@@ -77,15 +77,6 @@ At this point, if you haven't done so already, you will need to clone the androi
 
 Open an existing Android Studio project (or File -> Open) and select **android-tutorials**
 
-In this repository you will find the following projects, each explaining a specific Android feature:
-
-- ui-elements-runtime
-- ui-elements-xml
-- recyclerview
-- search
-- firebase
-- firebase-search
-
 ## Android mobile app
 
 A **mobile app** consists of pages (or screens) containing UI (user interface) elements.
@@ -271,7 +262,7 @@ In the tutorials we will be learning about:
 
 #### Close previous projects ui-elements-runtime and ui-elements-xml
 
-#### Open readme (README.md) file in trophies project
+#### Open readme (README.md) file in trophies project (Command - Shift - O - README.md)
 
 This readme file (README.md) can be viewed in Android Studio using Markdown Navigator plugin by installing it as follows:
 
@@ -280,3 +271,661 @@ This readme file (README.md) can be viewed in Android Studio using Markdown Navi
 - Click on **Install**
 - **Restart** **Android Studio**
 - Use **Markdown Navigator by Vladimir Schneider**
+
+*******************************************************************************************************************
+# Create new branch 'recyclerview'
+*******************************************************************************************************************
+
+## RecyclerView
+
+Android **RecyclerView** is the advanced version of ListView for more improvements and features.
+
+- Go to **_activity_main.xml_**, open the **Design** tab, and in **Palete** -> **Containers** you will find the **RecyclerView**.
+- Drag it to the Contraint Layout.
+- You will be asked if you want to add the library to project dependencies, click **Ok**.  When you do, the library will be added to the app/build.gradle file.
+
+The page that we are going to design contains our trophies information with **RecyclerView**.
+
+#### Create a class Trophy.java with getter/setter methods for each row in RecyclerView.
+
+In this tutorial we will have a **title** and a **description** for a trophy:
+
+```
+    public class Trophy {
+        String title;
+        String description;
+
+        public Trophy(String title, String description) {
+            this.title = title;
+            this.description = description;
+        }
+
+        public String getTitle() {
+            return title;
+        }
+
+        public void setTitle(String title) {
+            this.title = title;
+        }
+
+        public String getDescription() {
+            return description;
+        }
+
+        public void setDescription(String description) {
+            this.description = description;
+        }
+    }
+```
+
+#### Create a layout for RecyclerView item row trophies_item_row.xml.
+
+*src/main/java/com/example/androidtutorial/**trophies_item_row.java***
+```
+    <?xml version="1.0" encoding="utf-8"?>
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/txtTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="1dp"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txtDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="1dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtTitle" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+```
+
+#### Now create adapter class TrophyAdapter.java step-wise for recyclerview base.
+Follow these steps to easily create the adapter without any complex structure.
+Below steps are for RecyclerView adapter class.
+
+1. Create class **TrophyAdapter**
+
+*src/main/java/com/example/androidtutorial/**TrophyAdapter.java***
+```
+    public class TrophyAdapter {
+    }
+```
+
+2. Create **ViewHolder** for RecyclerView
+
+*src/main/java/com/example/androidtutorial/**TrophyHolder.java***
+```
+    public class TrophyHolder extends RecyclerView.ViewHolder {
+        private TextView txtTitle;
+        private TextView txtDescription;
+
+        public TrophyHolder(View itemView) {
+            super(itemView);
+            txtTitle = itemView.findViewById(R.id.txtTitle);
+            txtDescription = itemView.findViewById(R.id.txtDescription);
+        }
+
+        public void setDetails(Trophy trophy) {
+            txtTitle.setText(trophy.getTitle());
+            txtDescription.setText(trophy.getDescription());
+        }
+    }
+```
+
+
+3. Extend adapter **TrophyAdapter** class to **RecyclerView.Adapter<TrophyHolder>** and
+   implement override methods **onCreateViewHolder**, **onBindViewHolder** and **getItemCount**.
+
+   ```
+   public class TrophyAdapter extends RecyclerView.Adapter<TrophyHolder> {
+       private Context context;
+       private ArrayList<Trophy> trophies;
+
+       public TrophyAdapter(Context context, ArrayList<Trophy> trophies) {
+           this.context = context;
+           this.trophies = trophies;
+       }
+
+       @Override
+       public int getItemCount() {
+       }
+
+       @Override
+       public TrophyHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+       }
+
+       @Override
+       public void onBindViewHolder(TrophyHolder holder, int position) {
+       }
+
+   }
+   ```
+
+4. Define context and trophies ArrayList and create a constructor.
+
+*src/main/java/com/example/androidtutorial/**TrophyAdapter.java***
+```
+    public class TrophyAdapter extends RecyclerView.Adapter<TrophyHolder> {
+        private Context context;
+        private ArrayList<Trophy> trophies;
+
+        public TrophyAdapter(Context context, ArrayList<Trophy> trophies) {
+            this.context = context;
+            this.trophies = trophies;
+        }
+    }
+ ```
+
+5. Change **getItemCount()** method
+
+*src/main/java/com/example/androidtutorial/**TrophyAdapter.java***
+```
+    @Override
+    public int getItemCount() {
+          return trophies.size();
+    }
+```
+
+6. Inflate item layout in **onCreateViewHolder()** method and inflate **trophies_item_row** for the recyclerview.
+
+**_NOTE_**: **Inflate** means to **render** or **show** the page for each trophy row item in the recyclerview list.
+
+*src/main/java/com/example/androidtutorial/**TrophyAdapter.java***
+```
+    @Override
+    public TrophyHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+         View view = LayoutInflater.from(context).inflate(R.layout.trophies_item_row, parent, false);
+         return new TrophyHolder(view);
+    }
+```
+
+7. Create a method in **TrophyHolder** class to set values for each trophy row item in the recyclerview list.
+
+*src/main/java/com/example/androidtutorial/**TrophyAdapter.java***
+```
+    public void setDetails(Trophy trophy) {
+        txtTitle.setText(trophy.getTrophyTitle());
+        txtDescription.setText(trophy.getTrophyDescription());
+    }
+```
+
+8. Call method **onBindViewHolder()** method to bind the trophy row item of recyclerview
+
+*src/main/java/com/example/androidtutorial/**TrophyAdapter.java***
+```
+    @Override
+    public void onBindViewHolder(TrophyHolder holder, int position) {
+     Trophy trophy = trophies.get(position);
+     holder.setDetails(trophy);
+    }
+```
+
+#### Now change your activity code to do the following:
+
+    - set recyclerview layout manager
+    - set adapter for recyclerview
+    - fill data for recyclerview items
+    - set data to adapter and notify data
+
+*src/main/java/com/example/androidtutorial/**MainActivity.java***
+```
+    public class MainActivity extends AppCompatActivity {
+
+        private RecyclerView recyclerView;
+        private TrophyAdapter adapter;
+        private ArrayList<Trophy> trophyArrayList;
+
+
+        @Override
+        protected void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.activity_main);
+
+            // - set recyclerview layout manager
+            recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
+            recyclerView.setLayoutManager(new LinearLayoutManager(this));
+            trophyArrayList = new ArrayList<>();
+            adapter = new TrophyAdapter(this, trophyArrayList);
+            // set adapter for recyclerview
+            recyclerView.setAdapter(adapter);
+            // - fill data for recyclerview items
+            createListData();
+        }
+
+        // - set data to adapter and notify data
+        private void createListData() {
+            Trophy trophy;
+            trophy = new Trophy("Baseball - Arman Rafati - 2018", "Epic year for MVP player Arman Rafati ... ");
+            trophyArrayList.add(trophy);
+            trophy = new Trophy("Tennis - Shay Sarn - 2019", "Fabulous game!");
+            trophyArrayList.add(trophy);
+            trophy = new Trophy("Soccer - Johnny Bee - 2018", "Another fabulous game!");
+            trophyArrayList.add(trophy);
+            adapter.notifyDataSetChanged();
+        }
+    }
+```
+
+The LayoutManager is responsible for measuring and positioning item views within the recyclerview as well as
+determining the policy for when to recycle item views that are no longer visible to the user.
+By changing the layout manager, recyclerview can be used to implement a standard vertically scrolling list,
+a uniform grid, staggered grids, horizontally scrolling collections and more.
+
+#### Run/Debug the app
+
+#### Commit and push all your changes
+
+*******************************************************************************************************************
+# Create new branch 'search'
+*******************************************************************************************************************
+
+## Search
+
+We will be using **MaterialSearchbar** from https://github.com/mancj/MaterialSearchBar
+
+Additionally, we will be adding search functionality to existing RecyclerView code from the RecyclerView lesson in branch **recycleview**
+https://github.com/csarnevesht/android-tutorials/recyclerview
+
+#### include SearchBar to your project:
+
+add this code to the the project level build.gradle file:
+
+```
+    allprojects {
+	    repositories {
+		    ...
+		    maven { url "https://jitpack.io" }
+	    }
+    }
+```
+
+add the dependency to the the app level build.gradle file:
+
+```
+    dependencies {
+	    implementation 'com.github.mancj:MaterialSearchBar:0.8.2'
+    }
+```
+
+#### Go to res/layout/activity_main.xml, open the "Text" tab, and see the added Toolbar and Material Search bar as follows:
+
+*src/main/res/layout/**activity_main.xml***
+```
+      <com.mancj.materialsearchbar.MaterialSearchBar
+             android:id="@+id/searchBar"
+             style="@style/MaterialSearchBarLight"
+             android:layout_width="0dp"
+             android:layout_height="48dp"
+             android:layout_marginStart="8dp"
+             android:layout_marginTop="8dp"
+             android:layout_marginEnd="8dp"
+             android:elevation="8dp"
+             app:mt_placeholder=""
+             app:layout_constraintEnd_toEndOf="parent"
+             app:layout_constraintHorizontal_bias="0.0"
+             app:layout_constraintStart_toStartOf="parent"
+             app:layout_constraintTop_toTopOf="parent"
+             app:mt_maxSuggestionsCount="10"
+             app:mt_speechMode="false">
+         </com.mancj.materialsearchbar.MaterialSearchBar>
+
+         <androidx.recyclerview.widget.RecyclerView
+             android:id="@+id/recyclerView"
+             android:layout_width="395dp"
+             android:layout_height="635dp"
+             android:layout_marginStart="8dp"
+             android:layout_marginTop="8dp"
+             android:layout_marginEnd="8dp"
+             android:layout_marginBottom="8dp"
+             app:layout_constraintBottom_toBottomOf="parent"
+             app:layout_constraintEnd_toEndOf="parent"
+             app:layout_constraintStart_toStartOf="parent"
+             app:layout_constraintTop_toBottomOf="@+id/searchBar" />
+```
+
+#### Now change your activity code to do the following:
+
+1. Declare the search bar in the **MainActivity** class:
+
+*src/main/java/com/example/androidtutorial/**MainActivity.java***
+```
+    private MaterialSearchBar searchBar;
+
+```
+
+2. Add the following to the **MainActivity** class:
+
+*src/main/java/com/example/androidtutorial/**MainActivity.java***
+```
+   public class MainActivity extends AppCompatActivity {
+
+       private MaterialSearchBar searchBar;
+
+       @Override
+           protected void onCreate(Bundle savedInstanceState) {
+
+           ...
+           searchBar = findViewById(R.id.searchBar);
+
+           searchBar.addTextChangeListener(new TextWatcher() {
+               @Override
+               public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+               }
+
+               @Override
+               public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                   Log.d("LOG_TAG", getClass().getSimpleName() + " text changed " + searchBar.getText());
+                   doSearch(searchBar.getText());
+
+               }
+
+               @Override
+               public void afterTextChanged(Editable editable) {
+                   Log.d("LOG_TAG", getClass().getSimpleName() + " after text changed " + searchBar.getText());
+                   doSearch(searchBar.getText());
+
+               }
+
+           });
+
+           searchBar.enableSearch();
+       }
+
+       // search data
+       private void doSearch(String searchText) {
+           Log.d("LOG_TAG", getClass().getSimpleName() + " doSearch " + searchBar.getText());
+
+           adapter.getFilter().filter(searchText);
+           adapter.notifyDataSetChanged();
+
+       }
+
+```
+
+#### Commit and push all your changes.
+
+*******************************************************************************************************************
+# Create new branch 'firebase'
+*******************************************************************************************************************
+
+## Firebase
+
+We will be adding **Firebase** functionality to existing RecyclerView and search code from the search lesson in branch **search**
+https://github.com/csarnevesht/android-tutorials/search
+
+#### Add Firebase to your Android project
+
+Follow instructions in https://firebase.google.com/docs/android/setup
+
+#### Upload trophy images to 'Firebase Storage'
+
+1. Open the Firebase **console** on the browser at https://console.firebase.google.com
+2. Click on the **android-tutorials** project
+3. Click **Storage** from the left menu
+4. Click on the **Files** tab
+5. Click **Upload file** and upload trophy images from **android-tutorials/images**
+
+#### Define Storage Rules
+
+1. Click on the **Rules** tab
+2. Define Rules as follows:
+
+```
+    service firebase.storage {
+     match /b/{bucket}/o {
+      match /{allPaths=**} {
+         allow read, write: if true;
+        }
+    }
+    }
+```
+
+#### Create trophy records in 'Cloud Firestore'
+
+1. Open the Firebase **console** on the browser at https://console.firebase.google.com
+2. Click on the **android-tutorials** project
+3. Click **Database** from the left menu
+4. Select **Database** -> **Cloud Firestore**
+5. Click on the **Data** tab
+6. Add data as follows:
+
+![Alt text](zimages/android-firebase-cloud-firestore.png)
+
+**_IMPORTANT_**: To get the URL of an image:
+ - go to Firebase **Storage**
+ - click on the uploaded image,
+ - under File location, click **Download Url**, it will be copied into the clipboard which can then be pasted in the **Cloud Firestore** **image** field.
+
+![Alt text](zimages/android-firebase-storage-image.png)
+
+
+#### Add Firebase dependencies to module app build.gradle:
+
+*app/build.gradle*
+```
+    dependencies {
+
+        ...
+
+        //picasso library to retrieve images
+        implementation 'com.squareup.picasso:picasso:2.71828'
+
+        // Firebase core
+        implementation 'com.google.firebase:firebase-core:16.0.8'
+
+        // Cloud Firestore
+        // see https://firebase.google.com/docs/android/setup#available-libraries
+        implementation 'com.google.firebase:firebase-firestore:18.2.0'
+
+        // FirebaseUI for Cloud Firestore
+        // Used for FirestoreRecyclerAdapter
+        // see https://firebaseopensource.com/projects/firebase/firebaseui-android/firestore/readme.md/
+        implementation 'com.firebaseui:firebase-ui-firestore:4.3.1'
+        ...
+    }
+```
+
+Note: see https://firebase.google.com/docs/android/setup#available-libraries
+
+#### Connect to Firebase Database Cloud Firestore
+
+1. In **MainActivity.java** add code to access a **Cloud Firestore** instance from the activity and create a reference to the **Data** collection:
+
+*src/main/java/com/example/androidtutorial/**MainActivity.java***
+```
+    public class MainActivity extends AppCompatActivity {
+
+       ...
+       FirebaseFirestore mFirebaseDatabase;
+       CollectionReference mRef;
+
+
+        @Override
+        protected void onCreate(Bundle savedInstanceState) {
+           super.onCreate(savedInstanceState);
+           setContentView(R.layout.activity_trophies_list);
+
+           // Access a Cloud Firestore instance from your Activity
+           mFirebaseDatabase = FirebaseFirestore.getInstance();
+           mRef = mFirebaseDatabase.collection("Data");
+
+           ...
+        }
+
+```
+
+2. In **MainActivity.java** remove method **createListData()**, since we will now be getting the data from the **FirestoreRecyclerAdapter** which will get the data from the **Data** in **Cloud Firestore**.
+
+3. In **TrophyAdapter.java** replace the class parent to **FirestoreRecyclerAdapter<Trophy, TrophyHolder>** and implement methods **onCreateViewHolder**, **onBindViewHolder** and the following **constructor** :
+
+*src/main/java/com/example/androidtutorial/**TrophyAdapter.java***
+```
+    public class TrophyAdapter extends FirestoreRecyclerAdapter<Trophy, TrophyHolder>  {
+
+        public TrophyAdapter(@NonNull FirestoreRecyclerOptions<Trophy> options, Context context, ArrayList<Trophy> trophies) {
+            super(options);
+        }
+
+        @Override
+        public TrophyHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+            View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.trophies_item_row, parent, false);
+            TrophyHolder viewHolder = new TrophyHolder(view);
+            return viewHolder;
+        }
+
+        @Override
+        protected void onBindViewHolder(@NonNull TrophyHolder trophyHolder, int position, @NonNull Trophy trophy) {
+            trophyHolder.setDetails(trophy);
+        }
+    }
+```
+
+3. In **TrophyAdapter.java** remove method **getFilter()**, and in **MainActivity.java** remove the call to **getFilter()**, since the filter will now be done by the **FirestoreRecyclerAdapter**.
+
+4. In **MainActivity.java** add the following code which uses **FirestoreRecyclerOptions**, and **TrophyAdapter** (**FirestoreRecyclerAdapter**) to query the **Cloud Firestore**:
+
+*src/main/java/com/example/androidtutorial/**MainActivity.java***
+```
+        //load data into recycler view onStart
+        @Override
+        protected void onStart() {
+            super.onStart();
+
+            FirestoreRecyclerOptions<Trophy> options = new FirestoreRecyclerOptions.Builder<Trophy>()
+                    .setQuery(mRef, Trophy.class)
+                    .build();
+
+            adapter = new TrophyAdapter(options,this, trophyArrayList);
+            // set adapter for recyclerview
+            recyclerView.setAdapter(adapter);
+            // CLOUD FIRESTORE
+            // start listening for recyclerview items from firestore
+            adapter.startListening();
+        }
+
+```
+
+#### Commit and push all your changes.
+
+*******************************************************************************************************************
+# Create new branch 'firebase-search'
+*******************************************************************************************************************
+
+We will be using **MaterialSearchbar** from https://github.com/mancj/MaterialSearchBar
+
+Additionally, we will be adding search functionality to existing Firebase code from the firebase lesson in project **firebase**
+https://github.com/csarnevesht/android-tutorials/firebase
+
+#### Go to res/layout/activity_main.xml, open the "Text" tab, and see the added Toolbar and Material Search bar as follows:
+
+*src/main/res/layout/**activity_main.xml***
+```
+      <com.mancj.materialsearchbar.MaterialSearchBar
+             android:id="@+id/searchBar"
+             style="@style/MaterialSearchBarLight"
+             android:layout_width="0dp"
+             android:layout_height="48dp"
+             android:layout_marginStart="8dp"
+             android:layout_marginTop="8dp"
+             android:layout_marginEnd="8dp"
+             android:elevation="8dp"
+             app:mt_placeholder=""
+             app:layout_constraintEnd_toEndOf="parent"
+             app:layout_constraintHorizontal_bias="0.0"
+             app:layout_constraintStart_toStartOf="parent"
+             app:layout_constraintTop_toTopOf="parent"
+             app:mt_maxSuggestionsCount="10"
+             app:mt_speechMode="false">
+         </com.mancj.materialsearchbar.MaterialSearchBar>
+
+         <androidx.recyclerview.widget.RecyclerView
+             android:id="@+id/recyclerView"
+             android:layout_width="395dp"
+             android:layout_height="635dp"
+             android:layout_marginStart="8dp"
+             android:layout_marginTop="8dp"
+             android:layout_marginEnd="8dp"
+             android:layout_marginBottom="8dp"
+             app:layout_constraintBottom_toBottomOf="parent"
+             app:layout_constraintEnd_toEndOf="parent"
+             app:layout_constraintStart_toStartOf="parent"
+             app:layout_constraintTop_toBottomOf="@+id/searchBar" />
+```
+
+#### Now change your activity code to do the following (see android-tutorials/src/main/java/com/example/androidtutorial/MainActivity.java):
+
+1. Declare the search bar in the **MainActivity** class:
+
+*src/main/java/com/example/androidtutorial/**MainActivity.java***
+```
+    private MaterialSearchBar searchBar;
+
+```
+
+2. Add the following to the **MainActivity** class:
+
+*src/main/java/com/example/androidtutorial/**MainActivity.java***
+```
+   public class MainActivity extends AppCompatActivity {
+
+       private MaterialSearchBar searchBar;
+
+       @Override
+           protected void onCreate(Bundle savedInstanceState) {
+
+           ...
+           searchBar = findViewById(R.id.searchBar);
+
+           searchBar.addTextChangeListener(new TextWatcher() {
+               @Override
+               public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+               }
+
+               @Override
+               public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                   Log.d("LOG_TAG", getClass().getSimpleName() + " text changed " + searchBar.getText());
+                   doSearch(searchBar.getText());
+
+               }
+
+               @Override
+               public void afterTextChanged(Editable editable) {
+                   Log.d("LOG_TAG", getClass().getSimpleName() + " after text changed " + searchBar.getText());
+                   doSearch(searchBar.getText());
+
+               }
+
+           });
+
+           searchBar.enableSearch();
+       }
+
+       // search data
+       private void doSearch(String searchText) {
+           Log.d("LOG_TAG", getClass().getSimpleName() + " doSearch " + searchBar.getText());
+
+           adapter.getFilter().filter(searchText);
+           adapter.notifyDataSetChanged();
+
+       }
+
+```
+
+#### Commit and push all your changes.
+
+*******************************************************************************************************************
+# Done
+*******************************************************************************************************************
