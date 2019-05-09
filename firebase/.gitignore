@@ -1,5 +1,7 @@
 .gradle/**
 .idea/**
+*.iml
+**/*.iml
 **/.gradle/**
 **/.idea/**
 **/*.iml
@@ -22,3 +24,7 @@ search/app/app.iml
 android-tutorials.iml
 local.properties
 **/local.properties
+recyclerview/local.properties
+search/local.properties
+firebase/local.properties
+firebase-search/local.properties
