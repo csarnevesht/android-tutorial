@@ -59,19 +59,19 @@ At this point, if you haven't done so already, you will need to clone the androi
 
 - Select **Checkout project from version control** -> **Git**
 
-![Alt text](readmeimgs/checkout-project-from-git.png)
+![Alt text](zimages/checkout-project-from-git.png)
 
 - In **Clone Repository** -> type the URL to the android-tutorials github repository
 
-![Alt text](readmeimgs/checkout-project-clone-repo.png)
+![Alt text](zimages/checkout-project-clone-repo.png)
 
 - Select **Create project from existing sources**
 
-![Alt text](readmeimgs/checkout-project-create-from-existing-sources.png)
+![Alt text](zimages/checkout-project-create-from-existing-sources.png)
 
 - When asked "Would you like to create an Android Studio project for the sources you have checked out to ..." select **No**
 
-![Alt text](readmeimgs/checkout-from-version-control.png)
+![Alt text](zimages/checkout-from-version-control.png)
 
 ## Open android-tutorials in Android Studio
 

@@ -692,14 +692,14 @@ Follow instructions in https://firebase.google.com/docs/android/setup
 5. Click on the **Data** tab
 6. Add data as follows:
 
-![Alt text](readmeimgs/android-firebase-cloud-firestore.png)
+![Alt text](zimages/android-firebase-cloud-firestore.png)
 
 **_IMPORTANT_**: To get the URL of an image:
  - go to Firebase **Storage**
  - click on the uploaded image,
  - under File location, click **Download Url**, it will be copied into the clipboard which can then be pasted in the **Cloud Firestore** **image** field.
 
-![Alt text](readmeimgs/android-firebase-storage-image.png)
+![Alt text](zimages/android-firebase-storage-image.png)
 
 
 #### Add Firebase dependencies to module app build.gradle:
