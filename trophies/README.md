@@ -54,14 +54,24 @@ For now, just try to remember the following pieces, you don't need to understand
 ## Clone android-tutorials github repository
 
 At this point, if you haven't done so already, you will need to clone the android-tutorials github repository.
-In this repository you will find the following projects, each explaining a specific Android feature:
 
-- ui-elements-runtime
-- ui-elements-xml
-- recyclerview
-- search
-- firebase
-- firebase-search
+- Open Android Studio
+
+- Select **Checkout project from version control** -> **Git**
+
+![Alt text](zimages/checkout-project-from-git.png)
+
+- In **Clone Repository** -> type the URL to the android-tutorials github repository
+
+![Alt text](zimages/checkout-project-clone-repo.png)
+
+- Select **Create project from existing sources**
+
+![Alt text](zimages/checkout-project-create-from-existing-sources.png)
+
+- Select **No** when asked "Would you like to create an Android Studio project for the sources you have checked out to ..." 
+
+![Alt text](zimages/checkout-from-version-control.png)
 
 ## Open android-tutorials in Android Studio
 

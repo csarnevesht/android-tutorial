@@ -69,7 +69,7 @@ At this point, if you haven't done so already, you will need to clone the androi
 
 ![Alt text](zimages/checkout-project-create-from-existing-sources.png)
 
-- When asked "Would you like to create an Android Studio project for the sources you have checked out to ..." select **No**
+- Select **No** when asked "Would you like to create an Android Studio project for the sources you have checked out to ..." 
 
 ![Alt text](zimages/checkout-from-version-control.png)
 
