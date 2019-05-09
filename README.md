@@ -54,6 +54,29 @@ For now, just try to remember the following pieces, you don't need to understand
 ## Clone android-tutorials github repository
 
 At this point, if you haven't done so already, you will need to clone the android-tutorials github repository.
+
+- Open Android Studio
+
+- Select **Checkout project from version control** -> **Git**
+
+![Alt text](readmeimgs/checkout-project-from-git.png)
+
+- In **Clone Repository** -> type the URL to the android-tutorials github repository
+
+![Alt text](readmeimgs/checkout-project-clone-repo.png)
+
+- Select **Create project from existing sources**
+
+![Alt text](readmeimgs/checkout-project-create-from-existing-sources.png)
+
+- When asked "Would you like to create an Android Studio project for the sources you have checked out to ..." select **No**
+
+![Alt text](readmeimgs/checkout-from-version-control.png)
+
+## Open android-tutorials in Android Studio
+
+Open an existing Android Studio project (or File -> Open) and select **android-tutorials**
+
 In this repository you will find the following projects, each explaining a specific Android feature:
 
 - ui-elements-runtime
@@ -62,10 +85,6 @@ In this repository you will find the following projects, each explaining a speci
 - search
 - firebase
 - firebase-search
-
-## Open android-tutorials in Android Studio
-
-Open an existing Android Studio project (or File -> Open) and select **android-tutorials**
 
 ## Android mobile app
 
