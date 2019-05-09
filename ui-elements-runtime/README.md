@@ -24,7 +24,7 @@ an activity programmatically.
 
 *app/src/main/java/com/example/androidtutorial/MainActivity.java*
 ```
-public class MainActivity extends AppCompatActivity {
+public class TrophiesActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

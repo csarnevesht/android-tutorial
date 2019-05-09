@@ -51,13 +51,13 @@ In the above link, you will learn how to create a new project with an Empty Acti
 You will be exposed to files and concepts which will be explained in more details later.
 For now, just try to remember the following pieces, you don't need to understand them in detail now:
 
- - an **Android layout file**, activity_main.xml (*app/src/main/res/layout/activity_main.xml*),
- - an **Android Main activity file**, MainActivity.java (*app/src/main/java/com/example/androidtutorial/MainActivity.java*)
+ - an **Android layout file**, trophies_activity.xml (*app/src/main/res/layout/trophies_activity.xml*),
+ - an **Android Main activity file**, TrophiesActivity.java (*app/src/main/java/com/example/androidtutorial/TrophiesActivity.java*)
  - **Android Manifest file**, **AndroidManifest.xml** (*app/src/main/AndroidManifest.xml*)
  - Android emulator
  - running the Android app
 
-**_HINT_**: in Android Studio, use Cmd-Shift-O (or go to "Navigate" -> "File") and type MainActivity.java or activity_main.xml (or any file name) to open a file.
+**_HINT_**: in Android Studio, use Cmd-Shift-O (or go to "Navigate" -> "File") and type TrophiesActivity.java or trophies_activity.xml (or any file name) to open a file.
 
 ## Clone android-tutorials github repository (https://github.com/csarnevesht/android-tutorials)
 
@@ -160,9 +160,9 @@ To create UI elements at runtime, we need to create our own custom View and View
 Following is the example of creating an UI elements (TextView, EditText, Button) in LinearLayout using custom View and ViewGroup objects in
 an activity programmatically.
 
-*app/src/main/java/com/example/androidtutorial/MainActivity.java*
+*app/src/main/java/com/example/androidtutorial/TrophiesActivity.java*
 ```
-public class MainActivity extends AppCompatActivity {
+public class TrophiesActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -182,7 +182,7 @@ public class MainActivity extends AppCompatActivity {
 ```
 
 
-**_HINT_**: in Android Studio, use Cmd-Shift-O (or go to "Navigate" -> "File") and type MainActivity.java to see the above code, and
+**_HINT_**: in Android Studio, use Cmd-Shift-O (or go to "Navigate" -> "File") and type TrophiesActivity.java to see the above code, and
 run the app.
 
 *******************************************************************************************************************
@@ -197,10 +197,10 @@ The layout file must contain only one root element, which must be a View or View
 Once we define root element, then we can add additional layout objects or widgets as child elements to build the
 View hierarchy that defines our layout.
 
-Following is an example of defining some UI elements (TextView, EditText, Button) in an XML file (activity_main.xml)
+Following is an example of defining some UI elements (TextView, EditText, Button) in an XML file (trophies_activity.xml)
 using LinearLayout.
 
-*app/src/main/res/layout/activity_main.xml*
+*app/src/main/res/layout/trophies_activity.xml*
 ```
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -226,18 +226,18 @@ using LinearLayout.
 </LinearLayout>
 ```
 
-**_HINT_**: in Android Studio, use Cmd-Shift-O (or go to "Navigate" -> "File") and type activity_main.java to see the above xml code
+**_HINT_**: in Android Studio, use Cmd-Shift-O (or go to "Navigate" -> "File") and type trophies_activity.java to see the above xml code
 
-Also, in file MainActivity.java, method **setContentView(R.layout.activity_main)** is called to **render** the layout file.
+Also, in file TrophiesActivity.java, method **setContentView(R.layout.trophies_activity)** is called to **render** the layout file.
 Rendering a layout means that the activity will be showing the UI design (with the UI elements) written in the xml file.
 
-In method call **setContentView(R.layout.activity_main)**
+In method call **setContentView(R.layout.trophies_activity)**
 
 - R means Resource
 
 - layout means design
 
-- activity_main is the xml you have created under res->layout->activity_main.xml
+- trophies_activity is the xml you have created under res->layout->trophies_activity.xml
 
 For a more detailed explanation of setContentView method, see https://androidride.com/what-setcontentview-android-studio/
 
@@ -278,7 +278,7 @@ That method uses the view holder's position to determine what the contents shoul
 
 #### Add RecyclerView to your layout
 
-- Go to **_activity_main.xml_**, open the **Design** tab, and in **Palete** -> **Containers** you will find the **RecyclerView**.
+- Go to **_trophies_activity.xml_**, open the **Design** tab, and in **Palete** -> **Containers** you will find the **RecyclerView**.
 - Drag it to the Contraint Layout.
 - You will be asked if you want to add the library to project dependencies, click **Ok**.  When you do, the library will be added to the app/build.gradle file.
 
@@ -319,7 +319,7 @@ In this tutorial we will have a **title** and a **description** for a trophy.
 
 #### Create a layout for each trophy item in the RecyclerView.
 
-*src/main/java/com/example/androidtutorial/**trophies_item_row.java***
+*src/main/java/com/example/androidtutorial/**trophies_item.java***
 ```
     <?xml version="1.0" encoding="utf-8"?>
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -439,13 +439,13 @@ item with a view.
 5. Inflate the trophy item layout when a view holder is created for a trophy item.
 
 **_NOTE_**: **Inflate** means to **render** or **show** the page for each trophy item in the recyclerview list.
-Inflate the trophy item layout (**trophies_item_row.xml**) in method **onCreateViewHolder()**.
+Inflate the trophy item layout (**trophies_item.xml**) in method **onCreateViewHolder()**.
 
 *src/main/java/com/example/androidtutorial/**TrophyAdapter.java***
 ```
     @Override
     public TrophyHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-         View view = LayoutInflater.from(context).inflate(R.layout.trophies_item_row, parent, false);
+         View view = LayoutInflater.from(context).inflate(R.layout.trophies_item, parent, false);
          return new TrophyHolder(view);
     }
 ```
@@ -469,9 +469,9 @@ Change method **onBindViewHolder()** method to bind the trophy item.
     - set adapter for recyclerview
     - create data and notify adapter
 
-*src/main/java/com/example/androidtutorial/**MainActivity.java***
+*src/main/java/com/example/androidtutorial/**TrophiesActivity.java***
 ```
-    public class MainActivity extends AppCompatActivity {
+    public class TrophiesActivity extends AppCompatActivity {
 
         private RecyclerView recyclerView;
         private TrophyAdapter adapter;
@@ -481,7 +481,7 @@ Change method **onBindViewHolder()** method to bind the trophy item.
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
-            setContentView(R.layout.activity_main);
+            setContentView(R.layout.trophies_activity);
 
             // - set recyclerview layout manager
             recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
@@ -549,9 +549,9 @@ add the dependency to the the app level build.gradle file:
     }
 ```
 
-#### Go to res/layout/activity_main.xml, open the "Text" tab, and see the added Toolbar and Material Search bar as follows:
+#### Go to res/layout/trophies_activity.xml, open the "Text" tab, and see the added Toolbar and Material Search bar as follows:
 
-*src/main/res/layout/**activity_main.xml***
+*src/main/res/layout/**trophies_activity.xml***
 ```
       <com.mancj.materialsearchbar.MaterialSearchBar
              android:id="@+id/searchBar"
@@ -587,19 +587,19 @@ add the dependency to the the app level build.gradle file:
 
 #### Now change your activity code to do the following:
 
-1. Declare the search bar in the **MainActivity** class:
+1. Declare the search bar in the **TrophiesActivity** class:
 
-*src/main/java/com/example/androidtutorial/**MainActivity.java***
+*src/main/java/com/example/androidtutorial/**TrophiesActivity.java***
 ```
     private MaterialSearchBar searchBar;
 
 ```
 
-2. Add the following to the **MainActivity** class:
+2. Add the following to the **TrophiesActivity** class:
 
-*src/main/java/com/example/androidtutorial/**MainActivity.java***
+*src/main/java/com/example/androidtutorial/**TrophiesActivity.java***
 ```
-   public class MainActivity extends AppCompatActivity {
+   public class TrophiesActivity extends AppCompatActivity {
 
        private MaterialSearchBar searchBar;
 
@@ -731,11 +731,11 @@ Note: see https://firebase.google.com/docs/android/setup#available-libraries
 
 #### Connect to Firebase Database Cloud Firestore
 
-1. In **MainActivity.java** add code to access a **Cloud Firestore** instance from the activity and create a reference to the **Data** collection:
+1. In **TrophiesActivity.java** add code to access a **Cloud Firestore** instance from the activity and create a reference to the **Data** collection:
 
-*src/main/java/com/example/androidtutorial/**MainActivity.java***
+*src/main/java/com/example/androidtutorial/**TrophiesActivity.java***
 ```
-    public class MainActivity extends AppCompatActivity {
+    public class TrophiesActivity extends AppCompatActivity {
 
        ...
        FirebaseFirestore mFirebaseDatabase;
@@ -756,7 +756,7 @@ Note: see https://firebase.google.com/docs/android/setup#available-libraries
 
 ```
 
-2. In **MainActivity.java** remove method **createListData()**, since we will now be getting the data from the **FirestoreRecyclerAdapter** which will get the data from the **Data** in **Cloud Firestore**.
+2. In **TrophiesActivity.java** remove method **createListData()**, since we will now be getting the data from the **FirestoreRecyclerAdapter** which will get the data from the **Data** in **Cloud Firestore**.
 
 3. In **TrophyAdapter.java** replace the class parent to **FirestoreRecyclerAdapter<Trophy, TrophyHolder>** and implement methods **onCreateViewHolder**, **onBindViewHolder** and the following **constructor** :
 
@@ -770,7 +770,7 @@ Note: see https://firebase.google.com/docs/android/setup#available-libraries
 
         @Override
         public TrophyHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-            View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.trophies_item_row, parent, false);
+            View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.trophies_item, parent, false);
             TrophyHolder viewHolder = new TrophyHolder(view);
             return viewHolder;
         }
@@ -782,11 +782,11 @@ Note: see https://firebase.google.com/docs/android/setup#available-libraries
     }
 ```
 
-3. In **TrophyAdapter.java** remove method **getFilter()**, and in **MainActivity.java** remove the call to **getFilter()**, since the filter will now be done by the **FirestoreRecyclerAdapter**.
+3. In **TrophyAdapter.java** remove method **getFilter()**, and in **TrophiesActivity.java** remove the call to **getFilter()**, since the filter will now be done by the **FirestoreRecyclerAdapter**.
 
-4. In **MainActivity.java** add the following code which uses **FirestoreRecyclerOptions**, and **TrophyAdapter** (**FirestoreRecyclerAdapter**) to query the **Cloud Firestore**:
+4. In **TrophiesActivity.java** add the following code which uses **FirestoreRecyclerOptions**, and **TrophyAdapter** (**FirestoreRecyclerAdapter**) to query the **Cloud Firestore**:
 
-*src/main/java/com/example/androidtutorial/**MainActivity.java***
+*src/main/java/com/example/androidtutorial/**TrophiesActivity.java***
 ```
         //load data into recycler view onStart
         @Override
@@ -818,9 +818,9 @@ We will be using **MaterialSearchbar** from https://github.com/mancj/MaterialSea
 Additionally, we will be adding search functionality to existing Firebase code from the firebase lesson in project **firebase**
 https://github.com/csarnevesht/android-tutorials/firebase
 
-#### Go to res/layout/activity_main.xml, open the "Text" tab, and see the added Toolbar and Material Search bar as follows:
+#### Go to res/layout/trophies_activity.xml, open the "Text" tab, and see the added Toolbar and Material Search bar as follows:
 
-*src/main/res/layout/**activity_main.xml***
+*src/main/res/layout/**trophies_activity.xml***
 ```
       <com.mancj.materialsearchbar.MaterialSearchBar
              android:id="@+id/searchBar"
@@ -854,21 +854,21 @@ https://github.com/csarnevesht/android-tutorials/firebase
              app:layout_constraintTop_toBottomOf="@+id/searchBar" />
 ```
 
-#### Now change your activity code to do the following (see android-tutorials/src/main/java/com/example/androidtutorial/MainActivity.java):
+#### Now change your activity code to do the following (see android-tutorials/src/main/java/com/example/androidtutorial/TrophiesActivity.java):
 
-1. Declare the search bar in the **MainActivity** class:
+1. Declare the search bar in the **TrophiesActivity** class:
 
-*src/main/java/com/example/androidtutorial/**MainActivity.java***
+*src/main/java/com/example/androidtutorial/**TrophiesActivity.java***
 ```
     private MaterialSearchBar searchBar;
 
 ```
 
-2. Add the following to the **MainActivity** class:
+2. Add the following to the **TrophiesActivity** class:
 
-*src/main/java/com/example/androidtutorial/**MainActivity.java***
+*src/main/java/com/example/androidtutorial/**TrophiesActivity.java***
 ```
-   public class MainActivity extends AppCompatActivity {
+   public class TrophiesActivity extends AppCompatActivity {
 
        private MaterialSearchBar searchBar;
 

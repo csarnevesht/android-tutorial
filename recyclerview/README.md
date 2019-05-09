@@ -27,7 +27,7 @@ That method uses the view holder's position to determine what the contents shoul
 
 #### Add RecyclerView to your layout
 
-- Go to **_activity_main.xml_**, open the **Design** tab, and in **Palete** -> **Containers** you will find the **RecyclerView**.
+- Go to **_trophies_activity.xml_**, open the **Design** tab, and in **Palete** -> **Containers** you will find the **RecyclerView**.
 - Drag it to the Contraint Layout.
 - You will be asked if you want to add the library to project dependencies, click **Ok**.  When you do, the library will be added to the app/build.gradle file.
 
@@ -68,7 +68,7 @@ In this tutorial we will have a **title** and a **description** for a trophy.
 
 #### Create a layout for each trophy item in the RecyclerView.
 
-*src/main/java/com/example/androidtutorial/**trophies_item_row.java***
+*src/main/java/com/example/androidtutorial/**trophies_item.java***
 ```
     <?xml version="1.0" encoding="utf-8"?>
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -188,13 +188,13 @@ item with a view.
 5. Inflate the trophy item layout when a view holder is created for a trophy item.
 
 **_NOTE_**: **Inflate** means to **render** or **show** the page for each trophy item in the recyclerview list.
-Inflate the trophy item layout (**trophies_item_row.xml**) in method **onCreateViewHolder()**.
+Inflate the trophy item layout (**trophies_item.xml**) in method **onCreateViewHolder()**.
 
 *src/main/java/com/example/androidtutorial/**TrophyAdapter.java***
 ```
     @Override
     public TrophyHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-         View view = LayoutInflater.from(context).inflate(R.layout.trophies_item_row, parent, false);
+         View view = LayoutInflater.from(context).inflate(R.layout.trophies_item, parent, false);
          return new TrophyHolder(view);
     }
 ```
@@ -218,9 +218,9 @@ Change method **onBindViewHolder()** method to bind the trophy item.
     - set adapter for recyclerview
     - create data and notify adapter
 
-*src/main/java/com/example/androidtutorial/**MainActivity.java***
+*src/main/java/com/example/androidtutorial/**TrophiesActivity.java***
 ```
-    public class MainActivity extends AppCompatActivity {
+    public class TrophiesActivity extends AppCompatActivity {
 
         private RecyclerView recyclerView;
         private TrophyAdapter adapter;
@@ -230,7 +230,7 @@ Change method **onBindViewHolder()** method to bind the trophy item.
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
-            setContentView(R.layout.activity_main);
+            setContentView(R.layout.trophies_activity);
 
             // - set recyclerview layout manager
             recyclerView = (RecyclerView) findViewById(R.id.recyclerView);

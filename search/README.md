@@ -32,9 +32,9 @@ add the dependency to the the app level build.gradle file:
     }
 ```
 
-#### Go to res/layout/activity_main.xml, open the "Text" tab, and see the added Toolbar and Material Search bar as follows:
+#### Go to res/layout/trophies_activity.xml, open the "Text" tab, and see the added Toolbar and Material Search bar as follows:
 
-*src/main/res/layout/**activity_main.xml***
+*src/main/res/layout/**trophies_activity.xml***
 ```
       <com.mancj.materialsearchbar.MaterialSearchBar
              android:id="@+id/searchBar"
@@ -70,19 +70,19 @@ add the dependency to the the app level build.gradle file:
 
 #### Now change your activity code to do the following:
 
-1. Declare the search bar in the **MainActivity** class:
+1. Declare the search bar in the **TrophiesActivity** class:
 
-*src/main/java/com/example/androidtutorial/**MainActivity.java***
+*src/main/java/com/example/androidtutorial/**TrophiesActivity.java***
 ```
     private MaterialSearchBar searchBar;
 
 ```
 
-2. Add the following to the **MainActivity** class:
+2. Add the following to the **TrophiesActivity** class:
 
-*src/main/java/com/example/androidtutorial/**MainActivity.java***
+*src/main/java/com/example/androidtutorial/**TrophiesActivity.java***
 ```
-   public class MainActivity extends AppCompatActivity {
+   public class TrophiesActivity extends AppCompatActivity {
 
        private MaterialSearchBar searchBar;
 

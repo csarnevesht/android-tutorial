@@ -4,9 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
+    tools:context=".TrophiesActivity"
     android:orientation="vertical">
 
+
+    <com.mancj.materialsearchbar.MaterialSearchBar
+        android:id="@+id/searchBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:elevation="8dp"
+        android:gravity="center"
+        app:mt_maxSuggestionsCount="10"
+        app:mt_placeholder=""
+        app:mt_speechMode="false"></com.mancj.materialsearchbar.MaterialSearchBar>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"

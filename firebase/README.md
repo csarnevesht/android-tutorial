@@ -85,11 +85,11 @@ Note: see https://firebase.google.com/docs/android/setup#available-libraries
 
 #### Connect to Firebase Database Cloud Firestore
 
-1. In **MainActivity.java** add code to access a **Cloud Firestore** instance from the activity and create a reference to the **Data** collection:
+1. In **TrophiesActivity.java** add code to access a **Cloud Firestore** instance from the activity and create a reference to the **Data** collection:
 
-*src/main/java/com/example/androidtutorial/**MainActivity.java***
+*src/main/java/com/example/androidtutorial/**TrophiesActivity.java***
 ```
-    public class MainActivity extends AppCompatActivity {
+    public class TrophiesActivity extends AppCompatActivity {
 
        ...
        FirebaseFirestore mFirebaseDatabase;
@@ -110,7 +110,7 @@ Note: see https://firebase.google.com/docs/android/setup#available-libraries
 
 ```
 
-2. In **MainActivity.java** remove method **createListData()**, since we will now be getting the data from the **FirestoreRecyclerAdapter** which will get the data from the **Data** in **Cloud Firestore**.
+2. In **TrophiesActivity.java** remove method **createListData()**, since we will now be getting the data from the **FirestoreRecyclerAdapter** which will get the data from the **Data** in **Cloud Firestore**.
 
 3. In **TrophyAdapter.java** replace the class parent to **FirestoreRecyclerAdapter<Trophy, TrophyHolder>** and implement methods **onCreateViewHolder**, **onBindViewHolder** and the following **constructor** :
 
@@ -124,7 +124,7 @@ Note: see https://firebase.google.com/docs/android/setup#available-libraries
 
         @Override
         public TrophyHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-            View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.trophies_item_row, parent, false);
+            View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.trophies_item, parent, false);
             TrophyHolder viewHolder = new TrophyHolder(view);
             return viewHolder;
         }
@@ -136,11 +136,11 @@ Note: see https://firebase.google.com/docs/android/setup#available-libraries
     }
 ```
 
-3. In **TrophyAdapter.java** remove method **getFilter()**, and in **MainActivity.java** remove the call to **getFilter()**, since the filter will now be done by the **FirestoreRecyclerAdapter**.
+3. In **TrophyAdapter.java** remove method **getFilter()**, and in **TrophiesActivity.java** remove the call to **getFilter()**, since the filter will now be done by the **FirestoreRecyclerAdapter**.
 
-4. In **MainActivity.java** add the following code which uses **FirestoreRecyclerOptions**, and **TrophyAdapter** (**FirestoreRecyclerAdapter**) to query the **Cloud Firestore**:
+4. In **TrophiesActivity.java** add the following code which uses **FirestoreRecyclerOptions**, and **TrophyAdapter** (**FirestoreRecyclerAdapter**) to query the **Cloud Firestore**:
 
-*src/main/java/com/example/androidtutorial/**MainActivity.java***
+*src/main/java/com/example/androidtutorial/**TrophiesActivity.java***
 ```
         //load data into recycler view onStart
         @Override

@@ -12,10 +12,10 @@ The layout file must contain only one root element, which must be a View or View
 Once we define root element, then we can add additional layout objects or widgets as child elements to build the
 View hierarchy that defines our layout.
 
-Following is an example of defining some UI elements (TextView, EditText, Button) in an XML file (activity_main.xml)
+Following is an example of defining some UI elements (TextView, EditText, Button) in an XML file (main_activity.xml)
 using LinearLayout.
 
-*app/src/main/res/layout/activity_main.xml*
+*app/src/main/res/layout/main_activity.xml*
 ```
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -41,18 +41,18 @@ using LinearLayout.
 </LinearLayout>
 ```
 
-**_HINT_**: in Android Studio, use Cmd-Shift-O (or go to "Navigate" -> "File") and type activity_main.java to see the above xml code
+**_HINT_**: in Android Studio, use Cmd-Shift-O (or go to "Navigate" -> "File") and type main_activity.xml to see the above xml code.
 
-Also, in file MainActivity.java, method **setContentView(R.layout.activity_main)** is called to **render** the layout file.
+Also, in file TrophiesActivity.java, method **setContentView(R.layout.main_activity)** is called to **render** the layout file.
 Rendering a layout means that the activity will be showing the UI design (with the UI elements) written in the xml file.
 
-In method call **setContentView(R.layout.activity_main)**
+In method call **setContentView(R.layout.main_activity)**
 
 - R means Resource
 
 - layout means design
 
-- activity_main is the xml you have created under res->layout->activity_main.xml
+- main_activity is the xml you have created under res->layout->main_activity.xml
 
 For a more detailed explanation of setContentView method, see https://androidride.com/what-setcontentview-android-studio/
 
@@ -67,6 +67,6 @@ as much fun as I did!
 https://www.youtube.com/watch?v=4N4bCdyGcUc
 
 *******************************************************************************************************************
-# Open project 'recyclerview'
+# Create new branch 'recyclerview'
 *******************************************************************************************************************
 

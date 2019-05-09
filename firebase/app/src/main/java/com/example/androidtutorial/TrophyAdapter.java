@@ -24,7 +24,7 @@ public class TrophyAdapter extends FirestoreRecyclerAdapter<Trophy, TrophyHolder
 
     @Override
     public TrophyHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.trophies_item_row, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.trophies_item, parent, false);
         TrophyHolder viewHolder = new TrophyHolder(view);
         return viewHolder;
     }

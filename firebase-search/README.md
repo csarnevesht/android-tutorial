@@ -9,9 +9,9 @@ We will be using **MaterialSearchbar** from https://github.com/mancj/MaterialSea
 Additionally, we will be adding search functionality to existing Firebase code from the firebase lesson in project **firebase**
 https://github.com/csarnevesht/android-tutorials/firebase
 
-#### Go to res/layout/activity_main.xml, open the "Text" tab, and see the added Toolbar and Material Search bar as follows:
+#### Go to res/layout/trophies_activity.xml, open the "Text" tab, and see the added Toolbar and Material Search bar as follows:
 
-*src/main/res/layout/**activity_main.xml***
+*src/main/res/layout/**trophies_activity.xml***
 ```
       <com.mancj.materialsearchbar.MaterialSearchBar
              android:id="@+id/searchBar"
@@ -45,21 +45,21 @@ https://github.com/csarnevesht/android-tutorials/firebase
              app:layout_constraintTop_toBottomOf="@+id/searchBar" />
 ```
 
-#### Now change your activity code to do the following (see android-tutorials/src/main/java/com/example/androidtutorial/MainActivity.java):
+#### Now change your activity code to do the following (see android-tutorials/src/main/java/com/example/androidtutorial/TrophiesActivity.java):
 
-1. Declare the search bar in the **MainActivity** class:
+1. Declare the search bar in the **TrophiesActivity** class:
 
-*src/main/java/com/example/androidtutorial/**MainActivity.java***
+*src/main/java/com/example/androidtutorial/**TrophiesActivity.java***
 ```
     private MaterialSearchBar searchBar;
 
 ```
 
-2. Add the following to the **MainActivity** class:
+2. Add the following to the **TrophiesActivity** class:
 
-*src/main/java/com/example/androidtutorial/**MainActivity.java***
+*src/main/java/com/example/androidtutorial/**TrophiesActivity.java***
 ```
-   public class MainActivity extends AppCompatActivity {
+   public class TrophiesActivity extends AppCompatActivity {
 
        private MaterialSearchBar searchBar;
 

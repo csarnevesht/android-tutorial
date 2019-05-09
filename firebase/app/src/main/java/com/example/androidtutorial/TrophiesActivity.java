@@ -26,7 +26,7 @@ import com.mancj.materialsearchbar.MaterialSearchBar;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity {
+public class TrophiesActivity extends AppCompatActivity {
 
     private MaterialSearchBar searchBar;
 
@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.trophies_activity);
 
         // Access a Cloud Firestore instance from your Activity
         mFirebaseDatabase = FirebaseFirestore.getInstance();
