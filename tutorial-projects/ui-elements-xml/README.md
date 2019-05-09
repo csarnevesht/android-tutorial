@@ -67,7 +67,7 @@ as much fun as I did!
 https://www.youtube.com/watch?v=4N4bCdyGcUc
 
 *******************************************************************************************************************
-# Close project 'ui-elements-xml' and go back to original project 'android-tutorials'
+# Close project 'ui-elements-xml' and go back to original project 'android-tutorial'
 *******************************************************************************************************************
 
 

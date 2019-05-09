@@ -1,6 +1,6 @@
-# Android Tutorials
+# Android Tutorial
 
-In the tutorials we will be learning about:
+In the tutorial we will be learning about:
 
 - **basic concepts**
 - **recyclerview**
@@ -59,9 +59,9 @@ For now, just try to remember the following pieces, you don't need to understand
 
 **_HINT_**: in Android Studio, use Cmd-Shift-O (or go to "Navigate" -> "File") and type TrophiesActivity.java or trophies_activity.xml (or any file name) to open a file.
 
-## Clone android-tutorials github repository (https://github.com/csarnevesht/android-tutorials)
+## Clone android-tutorial github repository (https://github.com/csarnevesht/android-tutorial)
 
-At this point, if you haven't done so already, clone the android-tutorials github repository.
+At this point, if you haven't done so already, clone the android-tutorial github repository.
 
 - Open Android Studio
 
@@ -69,17 +69,17 @@ At this point, if you haven't done so already, clone the android-tutorials githu
 
 ![Alt text](zimages/checkout-project-from-git.png)
 
-- In **Clone Repository** -> type the URL to the android-tutorials github repository **https://github.com/csarnevesht/android-tutorials**
+- In **Clone Repository** -> type the URL to the android-tutorial github repository **https://github.com/csarnevesht/android-tutorial**
 
 ![Alt text](zimages/checkout-project-clone-repo.png)
 
 - Select defaults on all other pages
 
-## Open android-tutorials in Android Studio
+## Open android-tutorial in Android Studio
 
-If you have already cloned the android-tutorials github repository then open it:
+If you have already cloned the android-tutorial github repository then open it:
 
-Open an existing Android Studio project (or File -> Open) and select **android-tutorials**
+Open an existing Android Studio project (or File -> Open) and select **android-tutorial**
 
 ## Open readme (README.md) file in Android Studio (Command - Shift - O - README.md)
 
@@ -186,7 +186,7 @@ public class TrophiesActivity extends AppCompatActivity {
 run the app.
 
 *******************************************************************************************************************
-# Close project 'ui-elements-runtime' and go back to original project 'android-tutorials'
+# Close project 'ui-elements-runtime' and go back to original project 'android-tutorial'
 *******************************************************************************************************************
 
 *******************************************************************************************************************
@@ -249,7 +249,7 @@ For a more detailed explanation of setContentView method, see https://androidrid
 run the app.
 
 *******************************************************************************************************************
-# Close project 'ui-elements-xml' and go back to original project 'android-tutorials'
+# Close project 'ui-elements-xml' and go back to original project 'android-tutorial'
 *******************************************************************************************************************
 
 *******************************************************************************************************************
@@ -523,7 +523,7 @@ Change method **onBindViewHolder()** method to bind the trophy item.
 
 #### Commit and push all your changes
 
-#### Review general concepts by watching video tutorials
+#### Review general concepts by watching video tutorial
 
 A decent video tutorial for RecyclerView can be found at https://www.youtube.com/watch?v=Vyqz_-sJGFk
 
@@ -537,7 +537,7 @@ A decent video tutorial for RecyclerView can be found at https://www.youtube.com
 We will be using **MaterialSearchbar** from https://github.com/mancj/MaterialSearchBar
 
 Additionally, we will be adding search functionality to existing RecyclerView code from the RecyclerView lesson in branch **recycleview**
-https://github.com/csarnevesht/android-tutorials/recyclerview
+https://github.com/csarnevesht/android-tutorial/recyclerview
 
 #### include SearchBar to your project:
 
@@ -664,7 +664,7 @@ add the dependency to the the app level build.gradle file:
 ## Firebase
 
 We will be adding **Firebase** functionality to existing RecyclerView and search code from the search lesson in branch **search**
-https://github.com/csarnevesht/android-tutorials/search
+https://github.com/csarnevesht/android-tutorial/search
 
 #### Add Firebase to your Android project
 
@@ -673,10 +673,10 @@ Follow instructions in https://firebase.google.com/docs/android/setup
 #### Upload trophy images to 'Firebase Storage'
 
 1. Open the Firebase **console** on the browser at https://console.firebase.google.com
-2. Click on the **android-tutorials** project
+2. Click on the **android-tutorial** project
 3. Click **Storage** from the left menu
 4. Click on the **Files** tab
-5. Click **Upload file** and upload trophy images from **android-tutorials/images**
+5. Click **Upload file** and upload trophy images from **android-tutorial/images**
 
 #### Define Storage Rules
 
@@ -696,7 +696,7 @@ Follow instructions in https://firebase.google.com/docs/android/setup
 #### Create trophy records in 'Cloud Firestore'
 
 1. Open the Firebase **console** on the browser at https://console.firebase.google.com
-2. Click on the **android-tutorials** project
+2. Click on the **android-tutorial** project
 3. Click **Database** from the left menu
 4. Select **Database** -> **Cloud Firestore**
 5. Click on the **Data** tab
@@ -827,7 +827,7 @@ Note: see https://firebase.google.com/docs/android/setup#available-libraries
 We will be using **MaterialSearchbar** from https://github.com/mancj/MaterialSearchBar
 
 Additionally, we will be adding search functionality to existing Firebase code from the firebase lesson in project **firebase**
-https://github.com/csarnevesht/android-tutorials/firebase
+https://github.com/csarnevesht/android-tutorial/firebase
 
 #### Go to res/layout/trophies_activity.xml, open the "Text" tab, and see the added Toolbar and Material Search bar as follows:
 
@@ -865,7 +865,7 @@ https://github.com/csarnevesht/android-tutorials/firebase
              app:layout_constraintTop_toBottomOf="@+id/searchBar" />
 ```
 
-#### Now change your activity code to do the following (see android-tutorials/src/main/java/com/example/androidtutorial/TrophiesActivity.java):
+#### Now change your activity code to do the following (see android-tutorial/src/main/java/com/example/androidtutorial/TrophiesActivity.java):
 
 1. Declare the search bar in the **TrophiesActivity** class:
 

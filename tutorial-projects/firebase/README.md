@@ -7,7 +7,7 @@
 ## Firebase
 
 We will be adding **Firebase** functionality to existing RecyclerView and search code from the search lesson in branch **search**
-https://github.com/csarnevesht/android-tutorials/search
+https://github.com/csarnevesht/android-tutorial/search
 
 #### Add Firebase to your Android project
 
@@ -16,10 +16,10 @@ Follow instructions in https://firebase.google.com/docs/android/setup
 #### Upload trophy images to 'Firebase Storage'
 
 1. Open the Firebase **console** on the browser at https://console.firebase.google.com
-2. Click on the **android-tutorials** project
+2. Click on the **android-tutorial** project
 3. Click **Storage** from the left menu
 4. Click on the **Files** tab
-5. Click **Upload file** and upload trophy images from **android-tutorials/images**
+5. Click **Upload file** and upload trophy images from **android-tutorial/images**
 
 #### Define Storage Rules
 
@@ -39,7 +39,7 @@ Follow instructions in https://firebase.google.com/docs/android/setup
 #### Create trophy records in 'Cloud Firestore'
 
 1. Open the Firebase **console** on the browser at https://console.firebase.google.com
-2. Click on the **android-tutorials** project
+2. Click on the **android-tutorial** project
 3. Click **Database** from the left menu
 4. Select **Database** -> **Cloud Firestore**
 5. Click on the **Data** tab

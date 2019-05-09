@@ -9,7 +9,7 @@
 We will be using **MaterialSearchbar** from https://github.com/mancj/MaterialSearchBar
 
 Additionally, we will be adding search functionality to existing RecyclerView code from the RecyclerView lesson in branch **recycleview**
-https://github.com/csarnevesht/android-tutorials/recyclerview
+https://github.com/csarnevesht/android-tutorial/recyclerview
 
 #### include SearchBar to your project:
 

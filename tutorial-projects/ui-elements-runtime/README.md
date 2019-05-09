@@ -48,6 +48,6 @@ public class TrophiesActivity extends AppCompatActivity {
 run the app.
 
 *******************************************************************************************************************
-# Close project 'ui-elements-runtime' and go back to original project 'android-tutorials'
+# Close project 'ui-elements-runtime' and go back to original project 'android-tutorial'
 *******************************************************************************************************************
 

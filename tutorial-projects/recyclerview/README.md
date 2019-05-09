@@ -261,7 +261,7 @@ Change method **onBindViewHolder()** method to bind the trophy item.
 
 #### Commit and push all your changes
 
-#### Review general concepts by watching video tutorials
+#### Review general concepts by watching video tutorial
 
 A decent video tutorial for RecyclerView can be found at https://www.youtube.com/watch?v=Vyqz_-sJGFk
 
