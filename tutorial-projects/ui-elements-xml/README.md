@@ -67,6 +67,7 @@ as much fun as I did!
 https://www.youtube.com/watch?v=4N4bCdyGcUc
 
 *******************************************************************************************************************
-# Create new branch 'recyclerview'
+# Close project 'ui-elements-xml' and go back to original project 'android-tutorials'
 *******************************************************************************************************************
+
 
