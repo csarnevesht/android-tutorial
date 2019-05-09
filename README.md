@@ -894,11 +894,20 @@ https://github.com/csarnevesht/android-tutorials/firebase
 
        // search data
        private void doSearch(String searchText) {
-           Log.d("LOG_TAG", getClass().getSimpleName() + " doSearch " + searchBar.getText());
+            Log.d("LOG_TAG", getClass().getSimpleName() + " doSearch " + searchBar.getText());
 
-           adapter.getFilter().filter(searchText);
-           adapter.notifyDataSetChanged();
-
+            //convert string entered in SearchView to lowercase
+            String query = searchText.toLowerCase();
+            Query firebaseSearchQuery = mRef.whereArrayContains("search", query);
+            FirestoreRecyclerOptions<Trophy> options = new FirestoreRecyclerOptions.Builder<Trophy>()
+                .setQuery(query.isEmpty() ?  mRef : firebaseSearchQuery, Trophy.class)
+                .build();
+            adapter = new TrophyAdapter(options,this, trophyArrayList);
+            // set adapter for recyclerview
+            recyclerView.setAdapter(adapter);
+            // CLOUD FIRESTORE
+            // start listening for recyclerview items from firestore
+            adapter.startListening();
        }
 
 ```
