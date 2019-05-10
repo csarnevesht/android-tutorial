@@ -22,6 +22,7 @@ import com.mancj.materialsearchbar.MaterialSearchBar;
 import java.util.ArrayList;
 
 public class TrophiesActivity extends AppCompatActivity {
+    private static final String TAG = "TrophiesActivity";
 
     private MaterialSearchBar searchBar;
 
@@ -55,14 +56,14 @@ public class TrophiesActivity extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                Log.d("LOG_TAG", getClass().getSimpleName() + " text changed " + searchBar.getText());
+                Log.d(TAG, "onTextChanged: " + searchBar.getText());
                 doSearch(searchBar.getText());
 
             }
 
             @Override
             public void afterTextChanged(Editable editable) {
-                Log.d("LOG_TAG", getClass().getSimpleName() + " after text changed " + searchBar.getText());
+                Log.d(TAG, "afterTextChanged: " + searchBar.getText());
                 doSearch(searchBar.getText());
 
             }
@@ -89,7 +90,7 @@ public class TrophiesActivity extends AppCompatActivity {
 
     // search data
     private void doSearch(String searchText) {
-        Log.d("LOG_TAG", getClass().getSimpleName() + " doSearch " + searchBar.getText());
+        Log.d(TAG, "doSearch: " + searchBar.getText());
 
         adapter.getFilter().filter(searchText);
 

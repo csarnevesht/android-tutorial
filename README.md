@@ -635,14 +635,12 @@ add the dependency to the the app level build.gradle file:
 
                @Override
                public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                   Log.d("LOG_TAG", getClass().getSimpleName() + " text changed " + searchBar.getText());
                    doSearch(searchBar.getText());
 
                }
 
                @Override
                public void afterTextChanged(Editable editable) {
-                   Log.d("LOG_TAG", getClass().getSimpleName() + " after text changed " + searchBar.getText());
                    doSearch(searchBar.getText());
 
                }
@@ -654,8 +652,6 @@ add the dependency to the the app level build.gradle file:
 
        // search data
        private void doSearch(String searchText) {
-           Log.d("LOG_TAG", getClass().getSimpleName() + " doSearch " + searchBar.getText());
-
            adapter.getFilter().filter(searchText);
            adapter.notifyDataSetChanged();
 

@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TrophyAdapter extends RecyclerView.Adapter<TrophyHolder> implements Filterable {
+    private static final String TAG = "TrophyAdapter";
     private Context context;
     private ArrayList<Trophy> trophies;
     private List<Trophy> trophiesFiltered;
