@@ -1093,14 +1093,12 @@ Additionally, we will be adding search functionality to existing Firebase code f
 
                @Override
                public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                   Log.d("LOG_TAG", getClass().getSimpleName() + " text changed " + searchBar.getText());
                    doSearch(searchBar.getText());
 
                }
 
                @Override
                public void afterTextChanged(Editable editable) {
-                   Log.d("LOG_TAG", getClass().getSimpleName() + " after text changed " + searchBar.getText());
                    doSearch(searchBar.getText());
 
                }
@@ -1112,8 +1110,6 @@ Additionally, we will be adding search functionality to existing Firebase code f
 
        // search data
        private void doSearch(String searchText) {
-            Log.d("LOG_TAG", getClass().getSimpleName() + " doSearch " + searchBar.getText());
-
             //convert string entered in SearchView to lowercase
             String query = searchText.toLowerCase();
             Query firebaseSearchQuery = mRef.whereArrayContains("search", query);

@@ -44,7 +44,7 @@ Additionally, we will be adding search functionality to existing Firebase code f
              app:layout_constraintTop_toBottomOf="@+id/searchBar" />
 ```
 
-#### Now change your activity code to do the following (see android-tutorial/app/src/main/java/com/example/androidtutorial/TrophiesActivity.java):
+#### Now change your activity code to do the following:
 
 1. Declare the search bar in the **TrophiesActivity** class:
 
@@ -75,14 +75,12 @@ Additionally, we will be adding search functionality to existing Firebase code f
 
                @Override
                public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                   Log.d("LOG_TAG", getClass().getSimpleName() + " text changed " + searchBar.getText());
                    doSearch(searchBar.getText());
 
                }
 
                @Override
                public void afterTextChanged(Editable editable) {
-                   Log.d("LOG_TAG", getClass().getSimpleName() + " after text changed " + searchBar.getText());
                    doSearch(searchBar.getText());
 
                }
@@ -94,7 +92,6 @@ Additionally, we will be adding search functionality to existing Firebase code f
 
        // search data
        private void doSearch(String searchText) {
-            Log.d("LOG_TAG", getClass().getSimpleName() + " doSearch " + searchBar.getText());
 
             //convert string entered in SearchView to lowercase
             String query = searchText.toLowerCase();
@@ -102,7 +99,7 @@ Additionally, we will be adding search functionality to existing Firebase code f
             FirestoreRecyclerOptions<Trophy> options = new FirestoreRecyclerOptions.Builder<Trophy>()
                 .setQuery(query.isEmpty() ?  mRef : firebaseSearchQuery, Trophy.class)
                 .build();
-            adapter = new TrophyAdapter(options,this, trophyArrayList);
+            adapter = new TrophyAdapter(options, this, trophyArrayList);
             // set adapter for recyclerview
             recyclerView.setAdapter(adapter);
             // CLOUD FIRESTORE

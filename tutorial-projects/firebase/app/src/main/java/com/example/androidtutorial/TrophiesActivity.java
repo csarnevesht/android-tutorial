@@ -27,7 +27,7 @@ import com.mancj.materialsearchbar.MaterialSearchBar;
 import java.util.ArrayList;
 
 public class TrophiesActivity extends AppCompatActivity {
-
+    private static final String TAG = "TrophiesActivity";
     private MaterialSearchBar searchBar;
 
     LinearLayoutManager mLayoutManager;
@@ -93,8 +93,7 @@ public class TrophiesActivity extends AppCompatActivity {
 
     // search data
     private void doSearch(String searchText) {
-        Log.d("LOG_TAG", getClass().getSimpleName() + " doSearch " + searchBar.getText());
-
+        Log.d(TAG, "doSearch: "  + searchBar.getText());
         //convert string entered in SearchView to lowercase
         String query = searchText.toLowerCase();
         Query firebaseSearchQuery = mRef.whereArrayContains("search", query);
