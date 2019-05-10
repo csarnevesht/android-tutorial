@@ -1,4 +1,4 @@
-# Android Tutorial
+f# Android Tutorial
 
 *******************************************************************************************************************
 # Create new branch 'firebase'
@@ -7,7 +7,6 @@
 ## Firebase
 
 We will be adding **Firebase** functionality to existing RecyclerView and search code from the search lesson in branch **search**
-https://github.com/csarnevesht/android-tutorial/search
 
 #### Add Firebase to your Android project
 

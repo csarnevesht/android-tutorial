@@ -863,7 +863,6 @@ add the dependency to the the app level build.gradle file:
 ## Firebase
 
 We will be adding **Firebase** functionality to existing RecyclerView and search code from the search lesson in branch **search**
-https://github.com/csarnevesht/android-tutorial/search
 
 #### Add Firebase to your Android project
 
@@ -1025,8 +1024,7 @@ Note: see https://firebase.google.com/docs/android/setup#available-libraries
 
 We will be using **MaterialSearchbar** from https://github.com/mancj/MaterialSearchBar
 
-Additionally, we will be adding search functionality to existing Firebase code from the firebase lesson in project **firebase**
-https://github.com/csarnevesht/android-tutorial/firebase
+Additionally, we will be adding search functionality to existing Firebase code from the firebase lesson in branch **firebase**
 
 #### Go to res/layout/trophies_activity.xml, open the "Text" tab, and see the added Toolbar and Material Search bar as follows:
 

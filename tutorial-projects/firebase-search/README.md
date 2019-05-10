@@ -6,8 +6,7 @@
 
 We will be using **MaterialSearchbar** from https://github.com/mancj/MaterialSearchBar
 
-Additionally, we will be adding search functionality to existing Firebase code from the firebase lesson in project **firebase**
-https://github.com/csarnevesht/android-tutorial/firebase
+Additionally, we will be adding search functionality to existing Firebase code from the firebase lesson in branch **firebase**
 
 #### Go to res/layout/trophies_activity.xml, open the "Text" tab, and see the added Toolbar and Material Search bar as follows:
 
