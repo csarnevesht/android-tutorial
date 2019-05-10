@@ -32,7 +32,7 @@ add the dependency to the the app level build.gradle file:
     }
 ```
 
-#### Go to res/layout/trophies_activity.xml, open the "Text" tab, and see the added Toolbar and Material Search bar as follows:
+#### Go to res/layout/trophies_activity.xml, open the "Text" tab, and add the Material Search bar as follows:
 
 *app/src/main/res/layout/**trophies_activity.xml***
 ```
@@ -68,7 +68,7 @@ add the dependency to the the app level build.gradle file:
              app:layout_constraintTop_toBottomOf="@+id/searchBar" />
 ```
 
-#### Now change your activity code to do the following:
+#### Change activity code to add search functionality:
 
 1. Declare the search bar in the **TrophiesActivity** class:
 
@@ -124,6 +124,201 @@ add the dependency to the the app level build.gradle file:
            adapter.notifyDataSetChanged();
 
        }
+   }
+
+```
+
+#### Add filter capability to adapter TrophyAdapter:
+
+1. In **TrophyAdapter** add **Filterable** interface:
+
+*app/src/main/java/com/example/androidtutorial/**TrophyAdapter.java***
+```
+    public class TrophyAdapter extends RecyclerView.Adapter<TrophyHolder> implements Filterable {
+       ...
+    }
+```
+
+2. Generate **implement methods** for **TrophyFilter** - Right click on **Filterable** -> **Generate** -> **Implement methods**:
+
+*app/src/main/java/com/example/androidtutorial/**TrophyAdapter.java***
+```
+    public class TrophyAdapter extends RecyclerView.Adapter<TrophyHolder> implements Filterable {
+       ...
+       @Override
+       public Filter getFilter() {
+           return null;
+       }
+       ...
+    }
+```
+
+
+3. In **TrophyAdapter** create inner class **TrophyFilter** which extends **Filter** class:
+
+*app/src/main/java/com/example/androidtutorial/**TrophyAdapter.java***
+```
+    public class TrophyAdapter extends RecyclerView.Adapter<TrophyHolder> implements Filterable  {
+
+        ...
+        private class TrophyFilter extends Filter {
+
+        }
+
+        @Override
+        public Filter getFilter() {
+           return null;
+        }
+    }
+```
+
+4. Generate **implement methods** for TrophyFilter - Right click on **Filter** -> **Generate** -> **Implement methods**:
+
+*app/src/main/java/com/example/androidtutorial/**TrophyAdapter.java***
+```
+    public class TrophyAdapter extends RecyclerView.Adapter<TrophyHolder> implements Filterable  {
+
+        ...
+        private class TrophyFilter extends Filter {
+
+            @Override
+            protected FilterResults performFiltering(CharSequence constraint) {
+                return null;
+            }
+
+            @Override
+            protected void publishResults(CharSequence constraint, FilterResults results) {
+
+            }
+        }
+
+        @Override
+        public Filter getFilter() {
+           return null;
+        }
+    }
+
+```
+
+5. Change **getFilter** method to return a TrophyFilter object:
+
+*app/src/main/java/com/example/androidtutorial/**TrophyAdapter.java***
+```
+    public class TrophyAdapter extends RecyclerView.Adapter<TrophyHolder> implements Filterable  {
+
+        ...
+        private class TrophyFilter extends Filter {
+
+            @Override
+            protected FilterResults performFiltering(CharSequence constraint) {
+                return null;
+            }
+
+            @Override
+            protected void publishResults(CharSequence constraint, FilterResults results) {
+
+            }
+        }
+
+        @Override
+        public Filter getFilter() {
+           return new TrophyFilter();
+        }
+    }
+
+```
+
+5. Add a filtered list of trophies variable **trophiesFiltered** and set it in the constructor:
+
+*app/src/main/java/com/example/androidtutorial/**TrophyAdapter.java***
+```
+    public class TrophyAdapter extends RecyclerView.Adapter<TrophyHolder> implements Filterable  {
+
+        private Context context;
+        private ArrayList<Trophy> trophies;
+        private List<Trophy> trophiesFiltered;
+
+        public TrophyAdapter(Context context, ArrayList<Trophy> trophies) {
+            this.context = context;
+            this.trophies = trophies;
+            this.trophiesFiltered = trophies;
+        }
+
+        ...
+        private class TrophyFilter extends Filter {
+
+            @Override
+            protected FilterResults performFiltering(CharSequence constraint) {
+                return null;
+            }
+
+            @Override
+            protected void publishResults(CharSequence constraint, FilterResults results) {
+
+            }
+        }
+
+        @Override
+        public Filter getFilter() {
+           return new TrophyFilter();
+        }
+    }
+
+```
+
+6. Implement methods **performFiltering** and **publishResults**:
+
+*app/src/main/java/com/example/androidtutorial/**TrophyAdapter.java***
+```
+    public class TrophyAdapter extends RecyclerView.Adapter<TrophyHolder> implements Filterable  {
+
+        private Context context;
+        private ArrayList<Trophy> trophies;
+        private List<Trophy> trophiesFiltered;
+
+        public TrophyAdapter(Context context, ArrayList<Trophy> trophies) {
+            this.context = context;
+            this.trophies = trophies;
+            this.trophiesFiltered = trophies;
+        }
+
+        ...
+        private class TrophyFilter extends Filter {
+
+            @Override
+            protected FilterResults performFiltering(CharSequence constraint) {
+                String charString = constraint.toString().toLowerCase();
+                if (charString.isEmpty()) {
+                    trophiesFiltered = trophies;
+                } else {
+                    List<Trophy> filteredList = new ArrayList<>();
+                    for (Trophy row : trophies) {
+                        // name match condition. this might differ depending on your requirement
+                        // here we are looking for title or description match
+                        if (row.getTitle().toLowerCase().contains(charString) || row.getDescription().contains(charString)) {
+                            filteredList.add(row);
+                        }
+                    }
+                    trophiesFiltered = filteredList;
+                }
+
+                FilterResults filterResults = new FilterResults();
+                filterResults.values = trophiesFiltered;
+                return filterResults;
+            }
+
+            @Override
+            protected void publishResults(CharSequence constraint, FilterResults results) {
+                trophiesFiltered = (ArrayList<Trophy>) results.values;
+                notifyDataSetChanged();
+            }
+        }
+
+        @Override
+        public Filter getFilter() {
+            return new TrophyFilter();
+        }
+    }
 
 ```
 

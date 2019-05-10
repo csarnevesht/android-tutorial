@@ -17,7 +17,6 @@ public class TrophyAdapter extends RecyclerView.Adapter<TrophyHolder> implements
     private ArrayList<Trophy> trophies;
     private List<Trophy> trophiesFiltered;
 
-
     public TrophyAdapter(Context context, ArrayList<Trophy> trophies) {
         this.context = context;
         this.trophies = trophies;
@@ -41,39 +40,40 @@ public class TrophyAdapter extends RecyclerView.Adapter<TrophyHolder> implements
         holder.setDetails(trophy);
     }
 
+    private class TrophyFilter extends Filter {
+
+        @Override
+        protected FilterResults performFiltering(CharSequence constraint) {
+            String charString = constraint.toString().toLowerCase();
+            if (charString.isEmpty()) {
+                trophiesFiltered = trophies;
+            } else {
+                List<Trophy> filteredList = new ArrayList<>();
+                for (Trophy row : trophies) {
+                    // name match condition. this might differ depending on your requirement
+                    // here we are looking for title or description match
+                    if (row.getTitle().toLowerCase().contains(charString) || row.getDescription().contains(charString)) {
+                        filteredList.add(row);
+                    }
+                }
+                trophiesFiltered = filteredList;
+            }
+
+            FilterResults filterResults = new FilterResults();
+            filterResults.values = trophiesFiltered;
+            return filterResults;
+        }
+
+        @Override
+        protected void publishResults(CharSequence constraint, FilterResults results) {
+            trophiesFiltered = (ArrayList<Trophy>) results.values;
+            notifyDataSetChanged();
+        }
+    }
+
     @Override
     public Filter getFilter() {
-        return new Filter() {
-            @Override
-            protected FilterResults performFiltering(CharSequence charSequence) {
-                String charString = charSequence.toString().toLowerCase();
-                if (charString.isEmpty()) {
-                    trophiesFiltered = trophies;
-                } else {
-                    List<Trophy> filteredList = new ArrayList<>();
-                    for (Trophy row : trophies) {
-
-                        // name match condition. this might differ depending on your requirement
-                        // here we are looking for name or phone number match
-                        if (row.getTitle().toLowerCase().contains(charString) || row.getDescription().contains(charString)) {
-                            filteredList.add(row);
-                        }
-                    }
-
-                    trophiesFiltered = filteredList;
-                }
-
-                FilterResults filterResults = new FilterResults();
-                filterResults.values = trophiesFiltered;
-                return filterResults;
-            }
-
-            @Override
-            protected void publishResults(CharSequence charSequence, FilterResults filterResults) {
-                trophiesFiltered = (ArrayList<Trophy>) filterResults.values;
-                notifyDataSetChanged();
-            }
-        };
+        return new TrophyFilter();
     }
 
 }
