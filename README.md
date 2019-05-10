@@ -1116,7 +1116,7 @@ Additionally, we will be adding search functionality to existing Firebase code f
             FirestoreRecyclerOptions<Trophy> options = new FirestoreRecyclerOptions.Builder<Trophy>()
                 .setQuery(query.isEmpty() ?  mRef : firebaseSearchQuery, Trophy.class)
                 .build();
-            adapter = new TrophyAdapter(options,this, trophyArrayList);
+            adapter = new TrophyAdapter(options, this, trophyArrayList);
             // set adapter for recyclerview
             recyclerView.setAdapter(adapter);
             // CLOUD FIRESTORE
