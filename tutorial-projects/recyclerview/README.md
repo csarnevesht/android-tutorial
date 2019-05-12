@@ -120,13 +120,13 @@ The views in the list are represented by view holder objects. These objects are 
 you define by extending RecyclerView.ViewHolder. Each view holder is in charge of displaying a single
 item with a view.
 
-*app/src/main/java/com/example/androidtutorial/**TrophyHolder.java***
+*app/src/main/java/com/example/androidtutorial/**TrophyViewHolder.java***
 ```
-    public class TrophyHolder extends RecyclerView.ViewHolder {
+    public class TrophyViewHolder extends RecyclerView.ViewHolder {
         private TextView txtTitle;
         private TextView txtDescription;
 
-        public TrophyHolder(View itemView) {
+        public TrophyViewHolder(View itemView) {
             super(itemView);
             txtTitle = itemView.findViewById(R.id.txtTitle);
             txtDescription = itemView.findViewById(R.id.txtDescription);
@@ -154,11 +154,11 @@ item with a view.
     }
 ```
 
-3. Extend the trophy adapter **TrophyAdapter** class from **RecyclerView.Adapter<TrophyHolder>** and
+3. Extend the trophy adapter **TrophyAdapter** class from **RecyclerView.Adapter<TrophyViewHolder>** and
    implement override methods **onCreateViewHolder**, **onBindViewHolder** and **getItemCount**.
 
    ```
-   public class TrophyAdapter extends RecyclerView.Adapter<TrophyHolder> {
+   public class TrophyAdapter extends RecyclerView.Adapter<TrophyViewHolder> {
        private Context context;
        private ArrayList<Trophy> trophies;
 
@@ -172,11 +172,11 @@ item with a view.
        }
 
        @Override
-       public TrophyHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+       public TrophyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
        }
 
        @Override
-       public void onBindViewHolder(TrophyHolder holder, int position) {
+       public void onBindViewHolder(TrophyViewHolder holder, int position) {
        }
 
    }
@@ -200,9 +200,9 @@ Inflate the trophy item layout (**trophies_item.xml**) in method **onCreateViewH
 *app/src/main/java/com/example/androidtutorial/**TrophyAdapter.java***
 ```
     @Override
-    public TrophyHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public TrophyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
          View view = LayoutInflater.from(context).inflate(R.layout.trophies_item, parent, false);
-         return new TrophyHolder(view);
+         return new TrophyViewHolder(view);
     }
 ```
 
@@ -213,7 +213,7 @@ Change method **onBindViewHolder()** method to bind the trophy item.
 *app/src/main/java/com/example/androidtutorial/**TrophyAdapter.java***
 ```
     @Override
-    public void onBindViewHolder(TrophyHolder holder, int position) {
+    public void onBindViewHolder(TrophyViewHolder holder, int position) {
      Trophy trophy = trophies.get(position);
      holder.setDetails(trophy);
     }
@@ -231,7 +231,7 @@ Change method **onBindViewHolder()** method to bind the trophy item.
 
         private RecyclerView recyclerView;
         private TrophyAdapter adapter;
-        private ArrayList<Trophy> trophyArrayList;
+        private ArrayList<Trophy> trophies;
 
 
         @Override
@@ -242,8 +242,8 @@ Change method **onBindViewHolder()** method to bind the trophy item.
             // - set recyclerview layout manager
             recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
             recyclerView.setLayoutManager(new LinearLayoutManager(this));
-            trophyArrayList = new ArrayList<>();
-            adapter = new TrophyAdapter(this, trophyArrayList);
+            trophies = new ArrayList<>();
+            adapter = new TrophyAdapter(this, trophies);
             // set adapter for recyclerview
             recyclerView.setAdapter(adapter);
             // - fill data for recyclerview items
@@ -254,13 +254,13 @@ Change method **onBindViewHolder()** method to bind the trophy item.
         private void createListData() {
             Trophy trophy;
             trophy = new Trophy("Baseball - Arman Rafati - 2018", "This was an epic year for MVP player Arman Rafati.  He conquered the field with his quick legs.  Congratulations for a game well played by Arman and his mates ... ");
-            trophyArrayList.add(trophy);
+            trophies.add(trophy);
             trophy = new Trophy("Tennis - Shay Sarn - 2019", "Fabulous game! Shay is a lefty who has strengthened his game throughout the year. He has achieved a level of mastery and perfection.  Great job!");
-            trophyArrayList.add(trophy);
+            trophies.add(trophy);
             trophy = new Trophy("Soccer - Johnny Bee - 2018", "Another fabulous game with Johnny Bee. Johnny has legs of steel!  Go Mr. Bee!");
-            trophyArrayList.add(trophy);
+            trophies.add(trophy);
             trophy = new Trophy("Swimming - Anthony Lao - 2017", "Don't let Anthony fool you because he is a sophomore.  He has strong arms and legs and he will not be defated. Good job Mr. Lao!");
-            trophyArrayList.add(trophy);
+            trophies.add(trophy);
             adapter.notifyDataSetChanged();
         }
     }

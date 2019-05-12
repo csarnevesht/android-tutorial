@@ -33,7 +33,7 @@ public class TrophiesActivity extends AppCompatActivity {
     LinearLayoutManager mLayoutManager;
     private RecyclerView recyclerView;
     private TrophyAdapter adapter;
-    private ArrayList<Trophy> trophyArrayList;
+    private ArrayList<Trophy> trophies;
 
     FirebaseFirestore mFirebaseDatabase;
     CollectionReference mRef;
@@ -55,7 +55,7 @@ public class TrophiesActivity extends AppCompatActivity {
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         //set layout as LinearLayout
         recyclerView.setLayoutManager(mLayoutManager);
-        trophyArrayList = new ArrayList<>();
+        trophies = new ArrayList<>();
         // no longer needed since we are getting the items from FirestoreRecyclerAdapter
 //        // - fill data for recyclerview items
 //        createListData();
@@ -71,7 +71,7 @@ public class TrophiesActivity extends AppCompatActivity {
                 .setQuery(mRef, Trophy.class)
                 .build();
 
-        adapter = new TrophyAdapter(options,this, trophyArrayList);
+        adapter = new TrophyAdapter(options,this, trophies);
         // set adapter for recyclerview
         recyclerView.setAdapter(adapter);
         // CLOUD FIRESTORE
@@ -83,11 +83,11 @@ public class TrophiesActivity extends AppCompatActivity {
 //    private void createListData() {
 //        Trophy trophy;
 //        trophy = new Trophy("Baseball - Arman Rafati - 2018", "Epic year for MVP player Arman Rafati ... ");
-//        trophyArrayList.add(trophy);
+//        trophies.add(trophy);
 //        trophy = new Trophy("Tennis - Shay Sarn - 2019", "Fabulous game!");
-//        trophyArrayList.add(trophy);
+//        trophies.add(trophy);
 //        trophy = new Trophy("Soccer - Johnny Bee - 2018", "Another fabulous game!");
-//        trophyArrayList.add(trophy);
+//        trophies.add(trophy);
 //        adapter.notifyDataSetChanged();
 //    }
 
@@ -100,7 +100,7 @@ public class TrophiesActivity extends AppCompatActivity {
         FirestoreRecyclerOptions<Trophy> options = new FirestoreRecyclerOptions.Builder<Trophy>()
                 .setQuery(query.isEmpty() ?  mRef : firebaseSearchQuery, Trophy.class)
                 .build();
-        adapter = new TrophyAdapter(options,this, trophyArrayList);
+        adapter = new TrophyAdapter(options,this, trophies);
         // set adapter for recyclerview
         recyclerView.setAdapter(adapter);
         // CLOUD FIRESTORE

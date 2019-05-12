@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-public class TrophyAdapter extends RecyclerView.Adapter<TrophyHolder> {
+public class TrophyAdapter extends RecyclerView.Adapter<TrophyViewHolder> {
     private Context context;
     private ArrayList<Trophy> trophies;
 
@@ -24,13 +24,13 @@ public class TrophyAdapter extends RecyclerView.Adapter<TrophyHolder> {
     }
 
     @Override
-    public TrophyHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public TrophyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(context).inflate(R.layout.trophies_item, parent, false);
-        return new TrophyHolder(view);
+        return new TrophyViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(TrophyHolder holder, int position) {
+    public void onBindViewHolder(TrophyViewHolder holder, int position) {
         Trophy trophy = trophies.get(position);
         holder.setDetails(trophy);
     }

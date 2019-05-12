@@ -130,7 +130,7 @@ add the dependency to the the app level build.gradle file:
 
 *app/src/main/java/com/example/androidtutorial/**TrophyAdapter.java***
 ```
-    public class TrophyAdapter extends RecyclerView.Adapter<TrophyHolder> implements Filterable {
+    public class TrophyAdapter extends RecyclerView.Adapter<TrophyViewHolder> implements Filterable {
        ...
     }
 ```
@@ -139,7 +139,7 @@ add the dependency to the the app level build.gradle file:
 
 *app/src/main/java/com/example/androidtutorial/**TrophyAdapter.java***
 ```
-    public class TrophyAdapter extends RecyclerView.Adapter<TrophyHolder> implements Filterable {
+    public class TrophyAdapter extends RecyclerView.Adapter<TrophyViewHolder> implements Filterable {
        ...
        @Override
        public Filter getFilter() {
@@ -154,7 +154,7 @@ add the dependency to the the app level build.gradle file:
 
 *app/src/main/java/com/example/androidtutorial/**TrophyAdapter.java***
 ```
-    public class TrophyAdapter extends RecyclerView.Adapter<TrophyHolder> implements Filterable  {
+    public class TrophyAdapter extends RecyclerView.Adapter<TrophyViewHolder> implements Filterable  {
 
         ...
         private class TrophyFilter extends Filter {
@@ -172,7 +172,7 @@ add the dependency to the the app level build.gradle file:
 
 *app/src/main/java/com/example/androidtutorial/**TrophyAdapter.java***
 ```
-    public class TrophyAdapter extends RecyclerView.Adapter<TrophyHolder> implements Filterable  {
+    public class TrophyAdapter extends RecyclerView.Adapter<TrophyViewHolder> implements Filterable  {
 
         ...
         private class TrophyFilter extends Filter {
@@ -200,7 +200,7 @@ add the dependency to the the app level build.gradle file:
 
 *app/src/main/java/com/example/androidtutorial/**TrophyAdapter.java***
 ```
-    public class TrophyAdapter extends RecyclerView.Adapter<TrophyHolder> implements Filterable  {
+    public class TrophyAdapter extends RecyclerView.Adapter<TrophyViewHolder> implements Filterable  {
 
         ...
         private class TrophyFilter extends Filter {
@@ -228,7 +228,7 @@ add the dependency to the the app level build.gradle file:
 
 *app/src/main/java/com/example/androidtutorial/**TrophyAdapter.java***
 ```
-    public class TrophyAdapter extends RecyclerView.Adapter<TrophyHolder> implements Filterable  {
+    public class TrophyAdapter extends RecyclerView.Adapter<TrophyViewHolder> implements Filterable  {
 
         private Context context;
         private ArrayList<Trophy> trophies;
@@ -266,7 +266,7 @@ add the dependency to the the app level build.gradle file:
 
 *app/src/main/java/com/example/androidtutorial/**TrophyAdapter.java***
 ```
-    public class TrophyAdapter extends RecyclerView.Adapter<TrophyHolder> implements Filterable  {
+    public class TrophyAdapter extends RecyclerView.Adapter<TrophyViewHolder> implements Filterable  {
 
         private Context context;
         private ArrayList<Trophy> trophies;

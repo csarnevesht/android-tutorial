@@ -16,21 +16,21 @@ import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TrophyAdapter extends FirestoreRecyclerAdapter<Trophy, TrophyHolder>  {
+public class TrophyAdapter extends FirestoreRecyclerAdapter<Trophy, TrophyViewHolder>  {
 
-    public TrophyAdapter(@NonNull FirestoreRecyclerOptions<Trophy> options, Context context, ArrayList<Trophy> trophies) {
+    public TrophyAdapter(@NonNull FirestoreRecyclerOptions<Trophy> options, Context context) {
         super(options);
     }
 
     @Override
-    public TrophyHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public TrophyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.trophies_item, parent, false);
-        TrophyHolder viewHolder = new TrophyHolder(view);
+        TrophyViewHolder viewHolder = new TrophyViewHolder(view);
         return viewHolder;
     }
 
     @Override
-    protected void onBindViewHolder(@NonNull TrophyHolder trophyHolder, int position, @NonNull Trophy trophy) {
-        trophyHolder.setDetails(trophy);
+    protected void onBindViewHolder(@NonNull TrophyViewHolder trophyViewHolder, int position, @NonNull Trophy trophy) {
+        trophyViewHolder.setDetails(trophy);
     }
 }

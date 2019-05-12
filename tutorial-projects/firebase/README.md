@@ -111,26 +111,26 @@ Note: see https://firebase.google.com/docs/android/setup#available-libraries
 
 2. In **TrophiesActivity.java** remove method **createListData()**, since we will now be getting the data from the **FirestoreRecyclerAdapter** which will get the data from the **Data** in **Cloud Firestore**.
 
-3. In **TrophyAdapter.java** replace the class parent to **FirestoreRecyclerAdapter<Trophy, TrophyHolder>** and implement methods **onCreateViewHolder**, **onBindViewHolder** and the following **constructor** :
+3. In **TrophyAdapter.java** replace the class parent to **FirestoreRecyclerAdapter<Trophy, TrophyViewHolder>** and implement methods **onCreateViewHolder**, **onBindViewHolder** and the following **constructor** :
 
 *app/src/main/java/com/example/androidtutorial/**TrophyAdapter.java***
 ```
-    public class TrophyAdapter extends FirestoreRecyclerAdapter<Trophy, TrophyHolder>  {
+    public class TrophyAdapter extends FirestoreRecyclerAdapter<Trophy, TrophyViewHolder>  {
 
         public TrophyAdapter(@NonNull FirestoreRecyclerOptions<Trophy> options, Context context, ArrayList<Trophy> trophies) {
             super(options);
         }
 
         @Override
-        public TrophyHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        public TrophyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
             View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.trophies_item, parent, false);
-            TrophyHolder viewHolder = new TrophyHolder(view);
+            TrophyViewHolder viewHolder = new TrophyViewHolder(view);
             return viewHolder;
         }
 
         @Override
-        protected void onBindViewHolder(@NonNull TrophyHolder trophyHolder, int position, @NonNull Trophy trophy) {
-            trophyHolder.setDetails(trophy);
+        protected void onBindViewHolder(@NonNull TrophyViewHolder TrophyViewHolder, int position, @NonNull Trophy trophy) {
+            TrophyViewHolder.setDetails(trophy);
         }
     }
 ```
@@ -150,7 +150,7 @@ Note: see https://firebase.google.com/docs/android/setup#available-libraries
                     .setQuery(mRef, Trophy.class)
                     .build();
 
-            adapter = new TrophyAdapter(options,this, trophyArrayList);
+            adapter = new TrophyAdapter(options,this, trophies);
             // set adapter for recyclerview
             recyclerView.setAdapter(adapter);
             // CLOUD FIRESTORE
