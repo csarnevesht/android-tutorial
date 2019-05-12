@@ -71,7 +71,7 @@ public class TrophiesActivity extends AppCompatActivity {
                 .setQuery(mRef, Trophy.class)
                 .build();
 
-        adapter = new TrophyAdapter(options,this, trophies);
+        adapter = new TrophyAdapter(options,this);
         // set adapter for recyclerview
         recyclerView.setAdapter(adapter);
         // CLOUD FIRESTORE
@@ -100,7 +100,7 @@ public class TrophiesActivity extends AppCompatActivity {
         FirestoreRecyclerOptions<Trophy> options = new FirestoreRecyclerOptions.Builder<Trophy>()
                 .setQuery(query.isEmpty() ?  mRef : firebaseSearchQuery, Trophy.class)
                 .build();
-        adapter = new TrophyAdapter(options,this, trophies);
+        adapter = new TrophyAdapter(options,this);
         // set adapter for recyclerview
         recyclerView.setAdapter(adapter);
         // CLOUD FIRESTORE
