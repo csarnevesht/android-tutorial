@@ -109,7 +109,7 @@ Note: see https://firebase.google.com/docs/android/setup#available-libraries
 
 ```
 
-2. In **TrophiesActivity.java** remove method **createListData()**, since we will now be getting the data from the **FirestoreRecyclerAdapter** which will get the data from the **Data** in **Cloud Firestore**.
+2. In **TrophiesActivity.java** remove method **createTrophyData()**, since we will now be getting the data from the **FirestoreRecyclerAdapter** which will get the data from the **Data** in **Cloud Firestore**.
 
 3. In **TrophyAdapter.java** replace the class parent to **FirestoreRecyclerAdapter<Trophy, TrophyViewHolder>** and implement methods **onCreateViewHolder**, **onBindViewHolder** and the following **constructor** :
 

@@ -237,21 +237,26 @@ Change method **onBindViewHolder()** method to bind the trophy item.
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
+            // create trophies_activity layout view object
             setContentView(R.layout.trophies_activity);
 
-            // - set recyclerview layout manager
+            // set recyclerview layout manager
             recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
             recyclerView.setLayoutManager(new LinearLayoutManager(this));
+            
+            // create adapter
             trophies = new ArrayList<>();
             adapter = new TrophyAdapter(this, trophies);
+            
             // set adapter for recyclerview
             recyclerView.setAdapter(adapter);
-            // - fill data for recyclerview items
-            createListData();
+            
+            // create data and notify adapter
+            createTrophyData();
         }
 
         // - create data and notify adapter
-        private void createListData() {
+        private void createTrophyData() {
             Trophy trophy;
             trophy = new Trophy("Baseball - Arman Rafati - 2018", "This was an epic year for MVP player Arman Rafati.  He conquered the field with his quick legs.  Congratulations for a game well played by Arman and his mates ... ");
             trophies.add(trophy);

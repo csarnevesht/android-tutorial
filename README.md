@@ -292,6 +292,7 @@ The **adapter** also **binds** the **view holders** to their data.
 It does this by assigning the view holder to a position, and calling the adapter's **onBindViewHolder()** method.
 That method uses the view holder's position to determine what the contents should be, based on its list position.
 
+![Alt text](zimages/android-recyclerview-all.png)
 
 #### Add RecyclerView to your layout
 
@@ -509,11 +510,11 @@ Change method **onBindViewHolder()** method to bind the trophy item.
             // set adapter for recyclerview
             recyclerView.setAdapter(adapter);
             // - fill data for recyclerview items
-            createListData();
+            createTrophyData();
         }
 
         // - create data and notify adapter
-        private void createListData() {
+        private void createTrophyData() {
             Trophy trophy;
             trophy = new Trophy("Baseball - Arman Rafati - 2018", "This was an epic year for MVP player Arman Rafati.  He conquered the field with his quick legs.  Congratulations for a game well played by Arman and his mates ... ");
             trophies.add(trophy);
@@ -965,7 +966,7 @@ Note: see https://firebase.google.com/docs/android/setup#available-libraries
 
 ```
 
-2. In **TrophiesActivity.java** remove method **createListData()**, since we will now be getting the data from the **FirestoreRecyclerAdapter** which will get the data from the **Data** in **Cloud Firestore**.
+2. In **TrophiesActivity.java** remove method **createTrophyData()**, since we will now be getting the data from the **FirestoreRecyclerAdapter** which will get the data from the **Data** in **Cloud Firestore**.
 
 3. In **TrophyAdapter.java** replace the class parent to **FirestoreRecyclerAdapter<Trophy, TrophyViewHolder>** and implement methods **onCreateViewHolder**, **onBindViewHolder** and the following **constructor** :
 

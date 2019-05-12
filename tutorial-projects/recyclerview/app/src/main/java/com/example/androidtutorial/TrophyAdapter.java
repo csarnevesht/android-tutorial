@@ -25,6 +25,7 @@ public class TrophyAdapter extends RecyclerView.Adapter<TrophyViewHolder> {
 
     @Override
     public TrophyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        // create trophies_item layout object
         View view = LayoutInflater.from(context).inflate(R.layout.trophies_item, parent, false);
         return new TrophyViewHolder(view);
     }

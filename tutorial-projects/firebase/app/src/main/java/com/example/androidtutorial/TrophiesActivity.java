@@ -43,22 +43,24 @@ public class TrophiesActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        // create trophies_activity layout object
         setContentView(R.layout.trophies_activity);
 
-        // Access a Cloud Firestore instance from your Activity
+        // access a Cloud Firestore instance from your Activity
         mFirebaseDatabase = FirebaseFirestore.getInstance();
         mRef = mFirebaseDatabase.collection("Data");
 
         mLayoutManager = new GridLayoutManager(this, 3);
 
-        // - set recyclerview layout manager
+        // set recyclerview layout manager
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         //set layout as LinearLayout
         recyclerView.setLayoutManager(mLayoutManager);
         trophies = new ArrayList<>();
         // no longer needed since we are getting the items from FirestoreRecyclerAdapter
 //        // - fill data for recyclerview items
-//        createListData();
+//        createTrophyData();
 
     }
 
@@ -80,7 +82,7 @@ public class TrophiesActivity extends AppCompatActivity {
     }
 
 //    // - set data to adapter and notify data
-//    private void createListData() {
+//    private void createTrophyData() {
 //        Trophy trophy;
 //        trophy = new Trophy("Baseball - Arman Rafati - 2018", "Epic year for MVP player Arman Rafati ... ");
 //        trophies.add(trophy);

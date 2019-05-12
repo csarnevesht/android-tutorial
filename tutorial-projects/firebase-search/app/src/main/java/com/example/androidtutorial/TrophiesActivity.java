@@ -58,7 +58,7 @@ public class TrophiesActivity extends AppCompatActivity {
         trophies = new ArrayList<>();
         // no longer needed since we are getting the items from FirestoreRecyclerAdapter
 //        // - fill data for recyclerview items
-//        createListData();
+//        createTrophyData();
 
         searchBar = findViewById(R.id.searchBar);
 
