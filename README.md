@@ -148,7 +148,7 @@ The **ViewGroup** is a subclass of **View** and it will act as a base class for 
 for more information see https://developer.android.com/jetpack/androidx
 
 *******************************************************************************************************************
-# Open project 'ui-elements-runtime' in tutorial-projects
+# Open project 'ui-elements-runtime'
 *******************************************************************************************************************
 
 ## UI Elements
@@ -169,7 +169,7 @@ To create UI elements at runtime, we need to create our own custom View and View
 Following is the example of creating an UI elements (TextView, EditText, Button) in LinearLayout using custom View and ViewGroup objects in
 an activity programmatically.
 
-*app/src/main/java/com/example/androidtutorial/MainActivity.java*
+*app/app/src/main/java/com/example/androidtutorial/MainActivity.java*
 ```
 public class TrophiesActivity extends AppCompatActivity {
     @Override
@@ -194,12 +194,15 @@ public class TrophiesActivity extends AppCompatActivity {
 **_HINT_**: in Android Studio, use Cmd-Shift-O (or go to "Navigate" -> "File") and type MainActivity.java to see the above code, and
 run the app.
 
+![Alt text](zimages/ui-elements-runtime.png)
+
+
 *******************************************************************************************************************
 # Close project 'ui-elements-runtime' and go back to original project 'android-tutorial'
 *******************************************************************************************************************
 
 *******************************************************************************************************************
-# Open project 'ui-elements-xml' in tutorial-projects
+# Open project 'ui-elements-xml'
 *******************************************************************************************************************
 
 ## Declare UI elements in XML
@@ -213,7 +216,7 @@ View hierarchy that defines our layout.
 Following is an example of defining some UI elements (TextView, EditText, Button) in an XML file (main_activity.xml)
 using LinearLayout.
 
-*app/src/main/res/layout/main_activity.xml*
+*app/app/src/main/res/layout/main_activity.xml*
 ```
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -254,12 +257,16 @@ In method call **setContentView(R.layout.main_activity)**
 
 For a more detailed explanation of setContentView method, see https://androidride.com/what-setcontentview-android-studio/
 
-**_HINT_**: in Android Studio, use Cmd-Shift-O (or go to "Navigate" -> "File") and type main_activity.xml to see the above code, and
+**_HINT_**: in Android Studio, use Cmd-Shift-O (or go to "Navigate" -> "File") and type ActivityMain.java to see the above code, and
 run the app.
+
+![Alt text](zimages/ui-elements-xml.png)
+
 
 *******************************************************************************************************************
 # Close project 'ui-elements-xml' and go back to original project 'android-tutorial'
 *******************************************************************************************************************
+
 
 *******************************************************************************************************************
 # Constraint layout

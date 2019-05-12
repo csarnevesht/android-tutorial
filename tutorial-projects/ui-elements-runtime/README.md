@@ -47,6 +47,9 @@ public class TrophiesActivity extends AppCompatActivity {
 **_HINT_**: in Android Studio, use Cmd-Shift-O (or go to "Navigate" -> "File") and type MainActivity.java to see the above code, and
 run the app.
 
+![Alt text](zimages/ui-elements-runtime.png)
+
+
 *******************************************************************************************************************
 # Close project 'ui-elements-runtime' and go back to original project 'android-tutorial'
 *******************************************************************************************************************

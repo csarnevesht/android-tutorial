@@ -59,12 +59,7 @@ For a more detailed explanation of setContentView method, see https://androidrid
 **_HINT_**: in Android Studio, use Cmd-Shift-O (or go to "Navigate" -> "File") and type ActivityMain.java to see the above code, and
 run the app.
 
-## Constraint layout
-
-The Constraint Layout is worth learning about, once you watch this video and play around with it you may just have
-as much fun as I did!
-
-https://www.youtube.com/watch?v=4N4bCdyGcUc
+![Alt text](zimages/ui-elements-xml.png)
 
 *******************************************************************************************************************
 # Close project 'ui-elements-xml' and go back to original project 'android-tutorial'
