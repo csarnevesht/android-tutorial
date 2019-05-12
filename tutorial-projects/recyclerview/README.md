@@ -30,6 +30,7 @@ The **adapter** also **binds** the **view holders** to their data.
 It does this by assigning the view holder to a position, and calling the adapter's **onBindViewHolder()** method.
 That method uses the view holder's position to determine what the contents should be, based on its list position.
 
+![Alt text](zimages/android-recyclerview-all.png)
 
 #### Add RecyclerView to your layout
 
@@ -237,21 +238,16 @@ Change method **onBindViewHolder()** method to bind the trophy item.
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
-            // create trophies_activity layout view object
             setContentView(R.layout.trophies_activity);
 
-            // set recyclerview layout manager
+            // - set recyclerview layout manager
             recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
             recyclerView.setLayoutManager(new LinearLayoutManager(this));
-            
-            // create adapter
             trophies = new ArrayList<>();
             adapter = new TrophyAdapter(this, trophies);
-            
             // set adapter for recyclerview
             recyclerView.setAdapter(adapter);
-            
-            // create data and notify adapter
+            // - fill data for recyclerview items
             createTrophyData();
         }
 
@@ -278,7 +274,6 @@ Change method **onBindViewHolder()** method to bind the trophy item.
 #### Review general concepts by watching video tutorial
 
 A decent video tutorial for RecyclerView can be found at https://www.youtube.com/watch?v=Vyqz_-sJGFk
-
 
 *******************************************************************************************************************
 # Create new branch 'search'

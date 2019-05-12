@@ -104,6 +104,8 @@ Following are some common UI elements used in a screen/page which you may recogn
 - Progress Bar
 - Spinner
 
+The View is a base class for all UI components in android. For example, the EditText class is used to accept the input from users in android apps, which is a sub class of View.
+
 ## Android Activity
 
 In android, an **Activity** represents a single page with a user interface (UI) of an application.
@@ -129,6 +131,14 @@ Following are some examples of layouts:
 take a look at the following link to get an idea of the different layouts:
 https://www.tutlane.com/tutorial/android/android-view-and-viewgroup-with-examples
 
+**_IMPORTANT_**:
+ 
+The **View** is a base class for all UI components in android. 
+For example, the EditText class is used to accept the input from users in android apps, which is a sub class of View.
+
+The **ViewGroup** is a subclass of **View** and it will act as a base class for layouts and layouts parameters. 
+
+ 
 ## AndroidX Overview
 
 **AndroidX** is a major improvement to the original Android Support Library.
