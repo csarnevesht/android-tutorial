@@ -133,7 +133,7 @@ item with a view.
             txtDescription = itemView.findViewById(R.id.txtDescription);
         }
 
-        public void setDetails(Trophy trophy) {
+        public void setData(Trophy trophy) {
             txtTitle.setText(trophy.getTitle());
             txtDescription.setText(trophy.getDescription());
         }
@@ -193,9 +193,9 @@ item with a view.
     }
 ```
 
-5. Inflate the trophy item layout when a view holder is created for a trophy item.
+5. Inflate the trophy item layout when a view holder item is created for a trophy item.
 
-**_NOTE_**: **Inflate** means to **render** or **show** the page for each trophy item in the recyclerview list.
+**_NOTE_**: **Inflate** means to **render** or **create** the view layuout for each trophy item in the recyclerview list.
 Inflate the trophy item layout (**trophies_item.xml**) in method **onCreateViewHolder()**.
 
 *app/src/main/java/com/example/androidtutorial/**TrophyAdapter.java***
@@ -207,16 +207,16 @@ Inflate the trophy item layout (**trophies_item.xml**) in method **onCreateViewH
     }
 ```
 
-6. Bind the trophy item **data** to the trophy item **view**
+6. Bind (set) the trophy item **data** to the trophy item **view**.
 
-Change method **onBindViewHolder()** method to bind the trophy item.
+Change method **onBindViewHolder()** method to set the data from the trophy item to the view holder.
 
 *app/src/main/java/com/example/androidtutorial/**TrophyAdapter.java***
 ```
     @Override
     public void onBindViewHolder(TrophyViewHolder holder, int position) {
      Trophy trophy = trophies.get(position);
-     holder.setDetails(trophy);
+     holder.setData(trophy);
     }
 ```
 

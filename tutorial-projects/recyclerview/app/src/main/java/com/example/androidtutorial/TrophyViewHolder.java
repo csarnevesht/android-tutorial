@@ -15,7 +15,7 @@ public class TrophyViewHolder extends RecyclerView.ViewHolder {
         txtDescription = itemView.findViewById(R.id.txtDescription);
     }
 
-    public void setDetails(Trophy trophy) {
+    public void setData(Trophy trophy) {
         txtTitle.setText(trophy.getTitle());
         txtDescription.setText(trophy.getDescription());
     }
