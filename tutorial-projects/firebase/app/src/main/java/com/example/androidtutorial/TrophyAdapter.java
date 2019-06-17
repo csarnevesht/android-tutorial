@@ -18,7 +18,7 @@ import java.util.List;
 
 public class TrophyAdapter extends FirestoreRecyclerAdapter<Trophy, TrophyViewHolder>  {
 
-    public TrophyAdapter(@NonNull FirestoreRecyclerOptions<Trophy> options, Context context) {
+    public TrophyAdapter(@NonNull FirestoreRecyclerOptions<Trophy> options) {
         super(options);
     }
 
@@ -31,6 +31,6 @@ public class TrophyAdapter extends FirestoreRecyclerAdapter<Trophy, TrophyViewHo
 
     @Override
     protected void onBindViewHolder(@NonNull TrophyViewHolder trophyViewHolder, int position, @NonNull Trophy trophy) {
-        trophyViewHolder.setDetails(trophy);
+        trophyViewHolder.setData(trophy);
     }
 }

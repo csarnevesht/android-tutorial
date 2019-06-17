@@ -57,25 +57,25 @@ public class TrophiesActivity extends AppCompatActivity {
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         //set layout as LinearLayout
         recyclerView.setLayoutManager(mLayoutManager);
-        trophies = new ArrayList<>();
+        FirestoreRecyclerOptions<Trophy> options = new FirestoreRecyclerOptions.Builder<Trophy>()
+                .setQuery(mRef, Trophy.class)
+                .build();
+
+        // set adapter for recyclerview
+        adapter = new TrophyAdapter(options);
+        recyclerView.setAdapter(adapter);
+
         // no longer needed since we are getting the items from FirestoreRecyclerAdapter
+//        trophies = new ArrayList<>();
 //        // - fill data for recyclerview items
 //        createTrophyData();
 
     }
 
-    //load data into recycler view onStart
     @Override
     protected void onStart() {
         super.onStart();
 
-        FirestoreRecyclerOptions<Trophy> options = new FirestoreRecyclerOptions.Builder<Trophy>()
-                .setQuery(mRef, Trophy.class)
-                .build();
-
-        adapter = new TrophyAdapter(options,this);
-        // set adapter for recyclerview
-        recyclerView.setAdapter(adapter);
         // CLOUD FIRESTORE
         // start listening for recyclerview items from firestore
         adapter.startListening();
@@ -102,7 +102,7 @@ public class TrophiesActivity extends AppCompatActivity {
         FirestoreRecyclerOptions<Trophy> options = new FirestoreRecyclerOptions.Builder<Trophy>()
                 .setQuery(query.isEmpty() ?  mRef : firebaseSearchQuery, Trophy.class)
                 .build();
-        adapter = new TrophyAdapter(options,this);
+        adapter = new TrophyAdapter(options);
         // set adapter for recyclerview
         recyclerView.setAdapter(adapter);
         // CLOUD FIRESTORE

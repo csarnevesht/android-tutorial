@@ -117,7 +117,7 @@ Note: see https://firebase.google.com/docs/android/setup#available-libraries
 ```
     public class TrophyAdapter extends FirestoreRecyclerAdapter<Trophy, TrophyViewHolder>  {
 
-        public TrophyAdapter(@NonNull FirestoreRecyclerOptions<Trophy> options, Context context, ArrayList<Trophy> trophies) {
+        public TrophyAdapter(@NonNull FirestoreRecyclerOptions<Trophy> options) {
             super(options);
         }
 
