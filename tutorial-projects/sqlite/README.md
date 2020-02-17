@@ -11,9 +11,7 @@
 shstrophies@gmail.com
 shstrophies2020
 
-### Useful links:
-https://codinginflow.com/tutorials/android/view-sqlite-database-from-emulator-on-pc
-https://www.youtube.com/watch?v=_6p7BqjNANQ
+
 
 ### Trophies images: (in shstrophies@gmail account)
 https://drive.google.com/drive/u/1/folders/1jjymid-BPNTvE8sj15OUT0PvNo9TRVqW
@@ -28,7 +26,13 @@ https://sqlitebiter.readthedocs.io/en/latest/
     > sqlibiter url https://drive.google.com/drive/u/1/folders/1jjymid-BPNTvE8sj15OUT0PvNo9TRVqW
 ```
 
+### Install SQLiteStudio on Mac OSX
+
+This will allow you to view the SQLite database
+
 ### Install Android File Transfer app
+
+This will allow you to transfer the SQLite database to your android device
 
 https://www.android.com/filetransfer/
 https://www.switchingtomac.com/tutorials/how-to-transfer-files-from-android-to-mac/
@@ -44,3 +48,7 @@ https://www.javahelps.com/2016/07/deploy-and-upgrade-android-database.html
 
 
 #### Commit and push all your changes.
+
+### Useful links:
+https://codinginflow.com/tutorials/android/view-sqlite-database-from-emulator-on-pc
+https://www.youtube.com/watch?v=_6p7BqjNANQ
